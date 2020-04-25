@@ -40,8 +40,8 @@ $.ajax({
             var hospital_occupancy_percentage_val = data.COVID19[0].Hospitaloccupancyratepercentage + '%';
             var hospital_beds_occupied_val = data.COVID19[0].Numberofhospitalbedsoccupied;
             var hospital_beds_available_val = data.COVID19[0].Numberofhospitalbedsavailable;
+            var hospital_beds_total_val = Number(hospital_beds_occupied_val) + Number(hospital_beds_available_val);
             var hospital_covid19_val = data.COVID19[0]['NumberofpatientswithCovid-19inhospital'];
-
 // Add numbers from variables into HTML
             $("#date").append(document.createTextNode(date_val));
             $("#confirmedcases").append(document.createTextNode(confirmed_val));
@@ -68,7 +68,7 @@ $.ajax({
             
             $("#hospital_occupancy_percentage").append(document.createTextNode(hospital_occupancy_percentage_val)); 
             $("#hospital_beds_occupied").append(document.createTextNode(hospital_beds_occupied_val));
-            $("#hospital_beds_available").append(document.createTextNode(hospital_beds_available_val)); 
+            $("#hospital_beds_total").append(document.createTextNode(hospital_beds_total_val)); 
             $("#hospital_covid19").append(document.createTextNode(hospital_covid19_val)); 
 
 // Set widths for bar charts

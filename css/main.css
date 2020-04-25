@@ -251,7 +251,7 @@ header {
 
 }
 
-#hospital_beds_available, #hospital_beds_occupied {
+#hospital_beds_available, #hospital_beds_occupied, #hospital_beds_total {
 	font-size:1.4rem;
 
 }
@@ -343,7 +343,7 @@ footer {
 
 	.bar-text-full, .bar-text-left, .bar-text-right { font-size: 2.2rem; }
 	.averge-age { font-size:2.5rem }
-	#hospital_beds_available, #hospital_beds_occupied { font-size: 1.6rem; }
+	#hospital_beds_available, #hospital_beds_occupied,  #hospital_beds_total { font-size: 1.6rem; }
 	#hospital_occupancy_percentage { font-size:2.2rem; }
 
 	footer { font-size: 1.6rem; padding: 30px 40px 20px; }
