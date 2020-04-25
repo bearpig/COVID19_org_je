@@ -1,0 +1,293 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>COVID-19 tracker for Jersey</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/main.css">
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Jersey COVID-19 data tracker">
+<meta name="description" content="Using the data feed provided by the Government of Jersey via Open Data Portal, this site visualises the figures being produced in an easy to read format.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://covid19.org.je">
+<meta property="og:title" content="Jersey COVID-19 data tracker">
+<meta property="og:description" content="Using the data feed provided by the Government of Jersey via Open Data Portal, this site visualises the figures being produced in an easy to read format.">
+<meta property="og:image" content="https://covid19.org.je/images/meta.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://covid19.org.je">
+<meta property="twitter:title" content="Jersey COVID-19 data tracker">
+<meta property="twitter:description" content="Using the data feed provided by the Government of Jersey via Open Data Portal, this site visualises the figures being produced in an easy to read format.">
+<meta property="twitter:image" content="https://covid19.org.je/images/meta.png">
+
+
+</head>
+<body>
+
+  <header>
+    <div class="container">
+
+      <div class="twelve column">
+
+        <div class="title">
+          <h1>Jersey COVID-19 Tracker</h1>
+        </div>
+        <div class="updated">
+          <h4>
+            Last updated at <br/> 
+            <span id="date"></span>
+          </h4>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="row">    
+
+      <div class=" four columns">
+        <h2>Number of Tests</h2>
+
+        <div class="card">
+
+          <div class="tested_people">
+            <div class="data-label">People</div>
+            <div id="tested_people" class="data"></div>
+          </div>
+
+          <div class="tested_population">
+            <div class="data-label">Population *</div>
+            <div id="tested_population" class="data"></div>
+          </div>
+
+
+          <div class="tested_samples">
+            <div><span id="tested_samples" class="data"></span> samples have been tested
+            </div>
+            <div><span id="tested_results" class="data"></span> results have been recieved
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="eight columns">
+
+        <h2>Test Results</h2>
+
+        <div class="row">
+
+          <div class="card pending four columns">                
+            <div class="data-label">Pending Results</div>
+            <div id="pendingresults" class="data"></div>
+          </div>
+
+
+
+          <div class="card negative four columns">               
+            <div class="data-label">Negative Results</div>
+            <div id="negativetests" class="data"></div>
+          </div>
+
+          <div class="card confirmed four columns">                
+            <div class="data-label">Confirmed Cases</div>
+            <div id="confirmedcases" class="data"></div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="card active four columns">                
+            <div class="data-label">Active Cases **</div>
+            <div id="active" class="data"></div>
+          </div>
+
+
+
+          <div class="card recovered four columns">               
+            <div class="data-label">Recovered ***</div>
+            <div id="recovered" class="data"></div>
+          </div>
+
+          <div class="card death four columns">                
+            <div class="data-label">Deaths </div>
+            <div id="deaths" class="data"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+
+
+      <div class="male_female_positive six columns">
+        <h2>Tested Positive</h2>
+
+        <div class="card">                
+
+
+          <div class="bar-container  twelve column">
+            <div class="bar-left-container">
+              <div class="bar-text-left">
+                Male
+              </div>
+              <div class="bar-left">
+                <div id="bar-left-positive"></div>
+              </div>
+              <div class="bar-text-left">
+                <div id="male_positive"></div>
+              </div>
+            </div>
+
+            <div class="bar-right-container">
+              <div class="bar-text-right">
+                Female              
+              </div>
+              <div class="bar-right">
+                <div id="bar-right-positive"></div>
+              </div>
+              <div class="bar-text-right">
+                <div id="female_positive"></div>                  
+              </div>
+            </div>
+
+
+            <div class="average_age  twelve column">
+              <span id="average_positive"></span> is the average age of those tested positive
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="male_female_recovered six columns">    
+
+        <h2>Recovered</h2>            
+        <div class="card">
+          <div class="bar-container twelve column">
+            <div class="bar-left-container">
+              <div class="bar-text-left">
+                Male
+              </div>
+              <div class="bar-left">
+                <div id="bar-left-recovered"></div>
+              </div>
+              <div class="bar-text-left">
+                <div id="male_recovered"></div>
+              </div>
+            </div>
+
+            <div class="bar-right-container">
+              <div class="bar-text-right">
+                Female              
+              </div>
+              <div class="bar-right">
+                <div id="bar-right-recovered"></div>
+              </div>
+              <div class="bar-text-right">
+                <div id="female_recovered"></div>                  
+              </div>
+            </div>
+
+            <div class="average_age  twelve column">
+              <span id="average_recovered"></span> is the average age of those who recovered
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="twelve column">
+        <h2>Hospital</h2>
+        <div class="row">
+          <div class="hospital_covid four columns">   
+            <div class="card">             
+              <div class="data-label">Patients with COVID-19</div>
+              <div id="hospital_covid19" class="data"></div>
+            </div>
+          </div>
+
+          <div class="hospital_occupancy_percentage eight columns">               
+            <div class="card">
+              <div class="data-label">Hospital Bed Occupancy</div>
+
+              <div class="bar-container">
+                <div class="bar-full-container">
+                  <div id="hospital_occupancy_percentage"></div>
+                  <div class="bar-full">
+                    <div id="bar-full-hospital"></div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="average_age">
+                There are currently <span id="hospital_beds_occupied" class="data"></span> out of <span id="hospital_beds_available" class="data"></span> hospital beds in use
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+    <div class="row">
+      <div class="twelve column">
+        <footer>
+
+          <p>A <a href="http://www.bearpig.com" target="_blank">bearpig</a> hack using data produced by the Government of Jersey via <a href="https://opendata.gov.je/dataset/coronavirus-covid-19-number-of-cases-in-jersey">Open Data Portal</a> under the <a href="Open Government Licence – Jersey v1.0" target="_blank">OPL-J Licence</a>.</p>
+          <p>#StayHomeStaySafe</p>
+          <div class="credit">
+            
+            * based on population estimates from <a href="https://www.gov.je/Government/JerseyInFigures/Population/Pages/Population.aspx" target="_blank_"> Gov.je</a>. ** calculated from ConfirmedCases - (Recoverd + Deaths). *** A person is reported as recovered once they are asymptomatic and do not show any Covid-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test.
+          </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+  <script src="js/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164542381-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-164542381-1');
+  </script>
+
+</body>
+</html>

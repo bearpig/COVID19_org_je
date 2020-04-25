@@ -1,0 +1,360 @@
+body {
+
+    font-family: Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #2b313f;
+    text-align: left;
+    background-color: #f9fcff;
+    font-size:16px;
+}
+
+h1 {
+	font-size:2.5rem;
+	font-weight:normal;
+}
+
+
+h2 {
+	font-size:1.6rem;
+	font-weight:normal;
+	margin-top:40px;
+}
+
+h4 {
+	font-size:1.2rem;
+	font-weight:normal;
+}
+
+.row {
+	margin-bottom: 10px;
+}
+
+a {
+	color: #2b313f;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+p {
+	text-align: center;
+}
+
+
+header {
+	background: #2b313f;
+	float:left;
+	width:100%;
+	color:#f9fcff;
+	margin-bottom: 20px;
+}
+
+.title {
+ 	width:100%;
+	text-align:center;
+	padding-top:20px;
+}
+
+
+.updated {
+	width:100%;
+	text-align:center;
+	float:left;
+	font-size:0.8rem;
+}
+
+
+
+.updated span {
+	font-size:1.4rem;
+}
+
+
+.card {
+	
+	padding:20px;
+	float:left;
+	color:rgba(0,0,0,.4);
+	width:calc(100% - 40px);
+	box-shadow:0 0 35px 0 rgba(73,80,87,.1);
+	border-radius: 5px;
+	text-align: left;
+}
+
+
+.tested {
+	border-left:10px solid #585958;
+	padding-bottom:20px;
+
+}
+
+.tested_population {
+	margin:20px 0;
+}
+
+.tested_population .data {
+
+}
+
+
+.tested_samples .data {
+	margin:0 2px 0 0;
+	font-size:1.5rem;
+	font-weight:600;
+	color:rgba(0,0,0,.4);
+}
+
+.pending  {
+	border-left:10px solid #fec02f;
+}
+
+.negative {
+	border-left:10px solid #30a64a;
+
+}
+
+.confirmed {
+	border-left:10px solid #da3849;
+
+}
+
+.active {
+	border-left:10px solid #585958;
+}
+
+.recovered {
+	border-left:10px solid #56cdee;
+}
+
+.death {
+	border-left:10px solid #000;
+}
+
+.male_female_positive {
+}
+
+.male_female_recovered {
+}
+
+
+.bar-container {
+	width:100%;
+	position: relative;
+	padding-bottom:10px;
+	float:left ;
+}
+
+.bar-left-container {
+	width:50%;
+	float:left;
+}
+
+.bar-right-container {
+	width:50%;
+	float:right;
+}
+
+.bar-full-container {
+	width:100%;
+	float:left;
+}
+
+.bar-text-left {
+	padding:10px 10px 0 0;
+	text-align: right;
+	font-size:1.6rem;
+	color:#ee594c;
+	font-weight:bold;
+}
+
+.bar-text-right {
+	padding:10px 0 0 10px;
+	text-align: left;
+	font-size:1.6rem;
+	color:#2f78d6;
+	font-weight:bold;
+}
+
+.bar-text-full {
+	padding:10px 0 0 10px;
+	text-align: left;
+	font-size:1.6rem;
+	font-weight:bold;
+}
+
+.bar-left{
+	height:10px;
+	background: rgba(43,49,63,0.1);
+	margin-top:10px;
+}
+
+.bar-right {
+	height:10px;
+	background: rgba(43,49,63,0.1);
+	margin-top:10px;
+}
+
+.bar-full {
+	height:10px;
+	background: rgba(43,49,63,0.1);
+	margin-top:10px;
+}
+
+#bar-left-positive {
+	background: #ee594c;
+	height:10px;
+	float:right;
+}
+
+#bar-right-positive {
+	background: #2f78d6;
+	height:10px;
+	float:left;
+}
+
+#bar-left-recovered {
+	background: #ee594c;
+	height:10px;
+	float:right;
+}
+
+#bar-right-recovered {
+	background: #2f78d6;
+	height:10px;
+	float:left;
+}
+
+#bar-full-hospital {
+	background: #2b313f;
+	height:10px;
+	float:left;
+}
+
+.average_age {
+	padding-top:20px;
+	text-align: center;
+	font-size:1.4rem;
+}
+
+.average_age span {
+	font-weight:bold;
+	color:black;
+	margin-right:1px;
+}
+
+.hospital_covid {
+	border-left:10px solid #da3849;
+}
+
+.hospital_occupancy_percentage {
+
+}
+
+#hospital_beds_available, #hospital_beds_occupied {
+	font-size:1.4rem;
+
+}
+
+#hospital_occupancy_percentage {
+	text-align: center;
+	margin-top:10px;
+	color:#2b313f;
+	font-weight:bold;
+	font-size:1.6rem;
+}
+
+
+
+.data {
+	color:black;
+	font-size:2.5rem;
+	text-align: center;
+
+}
+
+.data-label {
+	text-transform: uppercase;
+	font-size:1.1rem;
+}
+
+
+footer {
+	padding: 30px 10px 20px;
+	font-size:1.2rem;
+}
+
+.credit {
+	margin-top:30px;
+	float:left;
+}
+
+.credit-text {
+	font-size:1rem;
+	float:left;
+	display: block;
+}
+
+.credit-asterix {
+	text-align: right;
+	width:20px;
+	margin-right:10px;
+	float: left;
+	display: block;	
+}
+
+
+
+/* Mobile first queries */
+
+ @media (max-width: 750px) {
+
+	.columns { margin-bottom: 10px; width:100%; }
+
+ } 
+
+
+/* Larger than tablet */
+@media (min-width: 750px){
+
+	h1 { font-size:3rem; }
+	h2 { font-size:2rem; margin-top:0; }
+	h4 { font-size:1.4rem; }
+
+	.row { margin-bottom:30px; }
+
+	header { margin-bottom: 40px; }
+
+	.title { width:50%; float:left; text-align:left; }
+	.updated { width:50%; text-align:right; float:right; padding-top:10px; position: relative; }
+	.updated span { font-size: 1.8rem; float:right; }
+
+	.data {
+	color:black;
+	font-size:3.5rem;
+	text-align: center;
+
+	}
+
+	.data-label {
+		text-transform: uppercase;
+		font-size:1.4rem;
+	}
+
+	.bar-text-full, .bar-text-left, .bar-text-right { font-size: 2.2rem; }
+	.averge-age { font-size:2.5rem }
+	#hospital_beds_available, #hospital_beds_occupied { font-size: 1.6rem; }
+	#hospital_occupancy_percentage { font-size:2.2rem; }
+
+	footer { font-size: 1.6rem; padding: 30px 40px 20px; }
+	.credit { font-size:1.2rem; }
+
+
+}
+
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
