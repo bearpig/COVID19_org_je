@@ -2,8 +2,15 @@
 
 $.ajax({
     type: "GET",
-    url: "https://covid19.openrock.xyz/",
-    success: function (data) {
+    url: "https://data.openrock.xyz/feeds/covid19full",
+    success: function (raw_data) {
+
+        data = raw_data.data[0]
+        deaths_age = raw_data.data[1]
+        deaths_place = raw_data.data[2]
+        deaths_gender = raw_data.data[3]
+        deaths_classification = raw_data.data[4]
+
 
         // Format numbers with commas
         function formatNumber(num) {
