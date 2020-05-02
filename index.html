@@ -248,73 +248,99 @@
             </div>
           </div>
 
-
-
-
         </div>
       </div>
 
 
     </div>
 <hr>
-  <!--   <div class="row">
+    <div class="row">
       <div class="twelve column">
         <h2>Deaths</h2>
 
         <div class="row">
-
-          <div class="four columns">   
+          <div class="four columns">
+      
             <div class="card death">             
               <div class="data-label">Total COVID-19 Deaths</div>
-              <div id="deaths_total" class="data">0</div>
-            </div>
-          </div>
+              <div id="deaths_total" class="data deaths_total"></div>
+              
+              <div class="death_lab">
+                <div><span id="deaths_lab_proven" class="data"></span> Laboratory proven
+                </div>
 
-          <div class="four columns">   
-            <div class="card death">             
-              <div class="data-label">Laboratory-Proven</div>
-              <div id="deaths_lab_proven" class="data">0</div>
-            </div>
-          </div>
+                <div><span id="deaths_lab_presumed" class="data"></span> Laboratory presumed
+                </div>
+              </div>
 
-          <div class="four columns">   
-            <div class="card death">             
-              <div class="data-label">laboratory-presumed</div>
-              <div id="deaths_lab_presumed" class="data">0</div>
-            </div>
           </div>
 
         </div>
-        <div class="row">
+ 
+        <div class="eight columns">
+          <div class="row">
 
           <div class="four columns">   
-            <div class="card death">             
-              <div class="data-label">Hospital</div>
-              <div id="hospital_deaths" class="data">0</div>
+            <div class="card">             
+              <div class="data-label">Hospitals ****</div>
+              <div id="hospital_deaths" class="data"></div>
             </div>
           </div>
 
            <div class="four columns">   
-            <div class="card death">             
-              <div class="data-label">Care Home</div>
-              <div id="carehome_deaths" class="data">0</div>
+            <div class="card">             
+              <div class="data-label">Care Homes</div>
+              <div id="carehome_deaths" class="data"></div>
             </div>
           </div>
 
            <div class="four columns">   
-            <div class="card death">             
-              <div class="data-label">Domestic Property</div>
-              <div id="domestica_deaths" class="data">0</div>
+            <div class="card">             
+              <div class="data-label">At Home</div>
+              <div id="domestic_deaths" class="data"></div>
             </div>
           </div>
-
+</div>
       
+        <div class="row">    
+          <div class="card">
+          
+          <div class="bar-container twelve column">
+            
+            <div class="bar-left-container">
+              <div class="bar-text-left">
+                Male
+              </div>
+              <div class="bar-left">
+                <div id="bar-left-deaths"></div>
+              </div>
+              <div class="bar-text-left">
+                <div id="male_deaths"></div>
+              </div>
+            </div>
 
+            <div class="bar-right-container">
+              <div class="bar-text-right">
+                Female              
+              </div>
+              <div class="bar-right">
+                <div id="bar-right-deaths"></div>
+              </div>
+              <div class="bar-text-right">
+                <div id="female_deaths"></div>                  
+              </div>
+            </div>
+
+          </div>
         </div>
+      </div>
 
       </div>
     </div>
-<hr> -->
+
+      </div>
+    </div>
+<hr>
     <div class="row">
       <div class="twelve column">
         <footer>
@@ -323,7 +349,7 @@
           <p>#StayHomeStaySafe</p>
           <div class="credit">
             
-            * based on population estimates from <a href="https://www.gov.je/Government/JerseyInFigures/Population/Pages/Population.aspx" target="_blank_"> Gov.je</a>. ** calculated from ConfirmedCases - (Recovered + Deaths). *** A person is reported as recovered once they are asymptomatic and do not show any COVID-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test.
+            * based on population estimates from <a href="https://www.gov.je/Government/JerseyInFigures/Population/Pages/Population.aspx" target="_blank_"> Gov.je</a>. ** calculated from ConfirmedCases - (Recovered + Deaths). *** A person is reported as recovered once they are asymptomatic and do not show any COVID-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test. **** calculated from the General Hospital, Overdale Hospital and St Saviours.
           </div>
       </footer>
 

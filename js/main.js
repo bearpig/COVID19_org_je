@@ -47,6 +47,16 @@ $.ajax({
         var hospital_beds_total_val = Number(hospital_beds_occupied_val) + Number(hospital_beds_available_val);
         var hospital_covid19_val = data.COVID19[0]['NumberofpatientswithCovid-19inhospital'];
 
+        var deaths_lab_proven_val = deaths_classification.COVID19DeathsClassification[0]['LaboratoryProvenCovid-19'];
+        var deaths_lab_presumed_val = deaths_classification.COVID19DeathsClassification[0]['ProbableCovid-19'];
+
+        var hospital_deaths_val = Number(deaths_place.COVID19DeathsPlace[0].GeneralHospital) + Number(deaths_place.COVID19DeathsPlace[0].OverdaleHospital) + Number(deaths_place.COVID19DeathsPlace[0].StSaviours);
+        var carehome_deaths_val = deaths_place.COVID19DeathsPlace[0].CareHome;
+        var domestic_deaths_val = deaths_place.COVID19DeathsPlace[0].Community;
+
+        var male_deaths_val = deaths_gender.COVID19DeathsGender[0].Male + '%';
+        var female_deaths_val = deaths_gender.COVID19DeathsGender[0].Female + '%';
+
         // Add numbers from variables into HTML
         $("#date").append(document.createTextNode(date_val));
         $("#confirmedcases").append(document.createTextNode(confirmed_val));
@@ -75,11 +85,26 @@ $.ajax({
         $("#hospital_beds_total").append(document.createTextNode(hospital_beds_total_val));
         $("#hospital_covid19").append(document.createTextNode(hospital_covid19_val));
 
+        $("#deaths_total").append(document.createTextNode(deaths_val));
+        $("#deaths_lab_proven").append(document.createTextNode(deaths_lab_proven_val));
+        $("#deaths_lab_presumed").append(document.createTextNode(deaths_lab_presumed_val));
+
+        $("#hospital_deaths").append(document.createTextNode(hospital_deaths_val));
+        $("#carehome_deaths").append(document.createTextNode(carehome_deaths_val));
+        $("#domestic_deaths").append(document.createTextNode(domestic_deaths_val));
+
+        $("#male_deaths").append(document.createTextNode(male_deaths_val));
+        $("#female_deaths").append(document.createTextNode(female_deaths_val));
+
+
+
         // Set widths for bar charts
         document.getElementById('bar-left-positive').style.width = male_positive_val;
         document.getElementById('bar-right-positive').style.width = female_positive_val;
         document.getElementById('bar-left-recovered').style.width = male_recovered_val;
         document.getElementById('bar-right-recovered').style.width = female_recovered_val;
         document.getElementById('bar-full-hospital').style.width = hospital_occupancy_percentage_val;
+        document.getElementById('bar-left-deaths').style.width = male_deaths_val;
+        document.getElementById('bar-right-deaths').style.width = female_deaths_val;
     }
 });
