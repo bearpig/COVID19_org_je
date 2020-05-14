@@ -23,7 +23,7 @@ $.ajax({
         var pending_val = formatNumber(data.COVID19[0].Pendingresults);
         var negative_val = formatNumber(data.COVID19[0].Negativetests);
 
-        var active_val = Number(data.COVID19[0].Confirmedcases) - (Number(data.COVID19[0].Recovered) + Number(data.COVID19[0].Deaths));
+        var active_val = Number(data.COVID19[0].Confirmedcases) - (Number(data.COVID19[0].Recovered) + Number(deaths_classification.COVID19DeathsClassification[0]['LaboratoryProvenCovid-19']));
         var recovered_val = formatNumber(data.COVID19[0].Recovered);
         var deaths_val = formatNumber(data.COVID19[0].Deaths);
 
