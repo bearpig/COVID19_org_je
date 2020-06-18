@@ -28,7 +28,7 @@ $.ajax({
         var deaths_val = formatNumber(data.COVID19[0].Deaths);
 
         var tested_people_val = formatNumber(data.COVID19[0].Totalpeopletested);
-        var tested_population_val = (data.COVID19[0].Totalpeopletested / 106800) * 100;   // tested population percentage
+        var tested_population_val = (data.COVID19[0].Totalpeopletested / 107800) * 100;   // tested population percentage
         var tested_population_rounded_val = Math.round(tested_population_val * 100) / 100 + '%'; // population percentage rounded
         var tested_results_val = formatNumber(data.COVID19[0].Totalresultsback);
         var tested_samples_val = formatNumber(data.COVID19[0].Totalsamplestested);
