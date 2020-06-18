@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/main.css">
 
+   <script src="https://kit.fontawesome.com/03aeba1fc9.js" crossorigin="anonymous"></script>
+
 <!-- Primary Meta Tags -->
 <meta name="title" content="Jersey COVID-19 data tracker">
 <meta name="description" content="Using the data feed provided by the Government of Jersey via Open Data Portal, this site visualises the figures being produced in an easy to read format.">
@@ -66,13 +68,20 @@
           <div class="tested_people">
             <div class="data-label">People</div>
             <div id="tested_people" class="data"></div>
+            <div class="change">1 day change</div>
+            <div id="tested_24" class="change-data"></div>
+            <div class="change">1 week change</div>
+            <div id="tested_7" class="change-data"></div>
           </div>
+
+          <div class="separator"></div>
 
           <div class="tested_population">
             <div class="data-label">Population *</div>
             <div id="tested_population" class="data"></div>
           </div>
 
+          <div class="separator"></div>
 
           <div class="tested_samples">
             <div><span id="tested_samples" class="data"></span> samples have been tested
@@ -89,43 +98,68 @@
         <h2>Test Results</h2>
 
         <div class="row">
-
-          <div class="card pending four columns">                
-            <div class="data-label">Pending Results</div>
-            <div id="pendingresults" class="data"></div>
-          </div>
-
-
-
-          <div class="card negative four columns">               
-            <div class="data-label">Negative Results</div>
-            <div id="negativetests" class="data"></div>
-          </div>
-
-          <div class="card confirmed four columns">                
+  
+          <div class="card confirmed six columns">                
             <div class="data-label">Confirmed Cases</div>
             <div id="confirmedcases" class="data"></div>
+            <div class="change">1 day change</div>
+            <div id="confirmed_24" class="change-data"></div>
+            <div class="change">1 week change</div>
+            <div id="confirmed_7" class="change-data"></div>
+          </div>
+         
+
+          <div class="card negative six columns">               
+            <div class="data-label">Negative Results</div>
+            <div id="negativetests" class="data"></div>
+            <div class="change">1 day change</div>
+            <div id="negative_24" class="change-data"></div>
+            <div class="change">1 week change</div>
+            <div id="negative_7" class="change-data"></div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          
+          <div class="card pending six columns">                
+            <div class="data-label">Pending Results</div>
+            <div id="pendingresults" class="data"></div>
+            <div class="change">1 day change</div>
+            <div id="pending_24" class="change-data"></div>
+            <div class="change">1 week change</div>
+            <div id="pending_7" class="change-data"></div>
+          </div>
+
+          <div class="card active six columns">                
+            <div class="data-label">Active Cases</div>
+            <div id="active" class="data"></div>
+            <div class="change">1 day change</div>
+            <div id="active_24" class="change-data"></div>
+            <div class="change">1 week change</div>
+            <div id="active_7" class="change-data"></div>
           </div>
 
         </div>
 
         <div class="row">
 
-          <div class="card active four columns">                
-            <div class="data-label">Active Cases **</div>
-            <div id="active" class="data"></div>
-          </div>
-
-
-
-          <div class="card recovered four columns">               
-            <div class="data-label">Recovered ***</div>
+          <div class="card recovered six columns">               
+            <div class="data-label">Recovered **</div>
             <div id="recovered" class="data"></div>
+            <div class="change">1 day change</div>
+            <div id="recovered_24" class="change-data"></div>
+            <div class="change">1 week change</div>
+            <div id="recovered_7" class="change-data"></div>
           </div>
 
-          <div class="card death four columns">                
+          <div class="card death six columns">                
             <div class="data-label">Deaths </div>
             <div id="deaths" class="data"></div>
+            <div class="change">1 day change</div>
+            <div id="deaths_24" class="change-data"></div>
+            <div class="change">1 week change</div>
+            <div id="deaths_7" class="change-data"></div>
           </div>
 
         </div>
@@ -224,6 +258,10 @@
             <div class="hospital_covid card">             
               <div class="data-label">Patients with COVID-19</div>
               <div id="hospital_covid19" class="data"></div>
+              <div class="change">1 day change</div>
+              <div id="hospital_covid19_24" class="change-data"></div>
+              <div class="change">1 week change</div>
+              <div id="hospital_covid19_7" class="change-data"></div>
             </div>
           </div>
 
@@ -282,8 +320,12 @@
 
           <div class="four columns">   
             <div class="card">             
-              <div class="data-label">Hospitals ****</div>
+              <div class="data-label">Hospitals ***</div>
               <div id="hospital_deaths" class="data"></div>
+              <div class="change">1 day change</div>
+              <div id="hospital_deaths_24" class="change-data"></div>
+              <div class="change">1 week change</div>
+              <div id="hospital_deaths_7" class="change-data"></div>
             </div>
           </div>
 
@@ -291,6 +333,10 @@
             <div class="card">             
               <div class="data-label">Care Homes</div>
               <div id="carehome_deaths" class="data"></div>
+              <div class="change">1 day change</div>
+              <div id="carehome_deaths_24" class="change-data"></div>
+              <div class="change">1 week change</div>
+              <div id="carehome_deaths_7" class="change-data"></div>
             </div>
           </div>
 
@@ -298,6 +344,10 @@
             <div class="card">             
               <div class="data-label">At Home</div>
               <div id="domestic_deaths" class="data"></div>
+              <div class="change">1 day change</div>
+              <div id="domestic_deaths_24" class="change-data"></div>
+              <div class="change">1 week change</div>
+              <div id="domestic_deaths_7" class="change-data"></div>
             </div>
           </div>
 </div>
@@ -349,7 +399,7 @@
           <p>#StayHomeStaySafe</p>
           <div class="credit">
             
-            * based on population estimates from <a href="https://www.gov.je/SiteCollectionDocuments/Government%20and%20administration/R%20Population%20Estimate%202019%2020200615%20SU.pdf" target="_blank_"> Gov.je</a>. ** calculated from ConfirmedCases - (Recovered + Laboratory Proven Deaths). *** A person is reported as recovered once they are asymptomatic and do not show any COVID-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test. **** calculated from the General Hospital, Overdale Hospital and St Saviours.
+            * based on population estimates from <a href="https://www.gov.je/SiteCollectionDocuments/Government%20and%20administration/R%20Population%20Estimate%202019%2020200615%20SU.pdf" target="_blank_"> Gov.je</a>. ** A person is reported as recovered once they are asymptomatic and do not show any COVID-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test. *** calculated from the General Hospital, Overdale Hospital and St Saviours.
           </div>
       </footer>
 
