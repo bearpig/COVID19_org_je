@@ -276,6 +276,13 @@ header {
 	text-align: center;
 }
 
+.change-data.poschange {
+	color: #da3849;
+}
+.change-data.negchange {
+	color:#30a64a;
+}
+
 
 footer {
 	padding: 30px 10px 20px;
