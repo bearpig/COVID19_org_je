@@ -271,6 +271,12 @@ header {
 	font-size:1.1rem;
 }
 
+.change-data {
+	font-weight: bold;
+	text-align: center;
+	color:black;
+}
+
 
 footer {
 	padding: 30px 10px 20px;
