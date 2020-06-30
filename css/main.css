@@ -93,7 +93,7 @@ header {
 
 }
 
-.tested_population {
+.tested_population, .deaths_total {
 	margin:20px 0;
 }
 
@@ -102,9 +102,9 @@ header {
 }
 
 
-.tested_samples .data {
+.tested_samples .data, .death_lab .data {
 	margin:0 2px 0 0;
-	font-size:1.5rem;
+	font-size:1.7rem;
 	font-weight:600;
 	color:rgba(0,0,0,.4);
 }
@@ -205,29 +205,18 @@ header {
 	margin-top:10px;
 }
 
-#bar-left-positive {
+#bar-left-positive, #bar-left-recovered, #bar-left-deaths  {
 	background: #ee594c;
 	height:10px;
 	float:right;
 }
 
-#bar-right-positive {
+#bar-right-positive, #bar-right-recovered, #bar-right-deaths {
 	background: #2f78d6;
 	height:10px;
 	float:left;
 }
 
-#bar-left-recovered {
-	background: #ee594c;
-	height:10px;
-	float:right;
-}
-
-#bar-right-recovered {
-	background: #2f78d6;
-	height:10px;
-	float:left;
-}
 
 #bar-full-hospital {
 	background: #2b313f;
@@ -280,6 +269,11 @@ header {
 .data-label {
 	text-transform: uppercase;
 	font-size:1.1rem;
+}
+
+.change-data {
+	font-weight: bold;
+	text-align: center;
 }
 
 
