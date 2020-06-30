@@ -153,7 +153,30 @@ $.ajax({
         $("#carehome_deaths_7").append(document.createTextNode(carehome_deaths_7_val));
         $("#domestic_deaths_7").append(document.createTextNode(domestic_deaths_7_val));
 
+        // Set colour for data change value if positive/negative
+        tested_people_24_val < 0 ? $("#tested_24").addClass('negchange') : $("#tested_24").addClass('poschange');
+        confirmed_24_val < 0 ? $("#confirmed_24").addClass('negchange') : $("#confirmed_24").addClass('poschange');
+        pending_24_val < 0 ? $("#pending_24").addClass("negchange") : $("#pending_24").addClass("poschange");
+        negative_24_val < 0 ? $("#negative_24").addClass("negchange") : $("#negative_24").addClass("poschange");
+        active_24_val < 0 ? $("#active_24").addClass("negchange") : $("#active_24").addClass("poschange");
+        recovered_24_val < 0 ? $("#recovered_24").addClass("negchange") : $("#recovered_24").addClass("poschange");
+        deaths_24_val < 0 ? $("#deaths_24").addClass("negchange") : $("#deaths_24").addClass("poschange");
+        hospital_covid19_24_val < 0 ? $("#hospital_covid19_24").addClass("negchange") : $("#hospital_covid19_24").addClass("poschange");
+        hospital_deaths_24_val < 0 ? $("#hospital_deaths_24").addClass("negchange") : $("#hospital_deaths_24").addClass("poschange");
+        carehome_deaths_24_val < 0 ? $("#carehome_deaths_24").addClass("negchange") : $("#carehome_deaths_24").addClass("poschange");
+        domestic_deaths_24_val < 0 ? $("#domestic_deaths_24").addClass("negchange") : $("#domestic_deaths_24").addClass("poschange");
 
+        tested_people_7_val < 0 ? $("#tested_7").addClass("negchange") : $("#tested_7").addClass("poschange");
+        confirmed_7_val < 0 ? $("#confirmed_7").addClass("negchange") : $("#confirmed_7").addClass("poschange");
+        pending_7_val < 0 ? $("#pending_7").addClass("negchange") : $("#pending_7").addClass("poschange");
+        negative_7_val < 0 ? $("#negative_7").addClass("negchange") : $("#negative_7").addClass("poschange");
+        active_7_val < 0 ? $("#active_7").addClass("negchange") : $("#active_7").addClass("poschange");
+        recovered_7_val < 0 ? $("#recovered_7").addClass("negchange") : $("#recovered_7").addClass("poschange");
+        deaths_7_val < 0 ? $("#deaths_7").addClass("negchange") : $("#deaths_7").addClass("poschange");
+        hospital_covid19_7_val < 0 ? $("#hospital_covid19_7").addClass("negchange") : $("#hospital_covid19_7").addClass("poschange");
+        hospital_deaths_7_val < 0 ? $("#hospital_deaths_7").addClass("negchange") : $("#hospital_deaths_7").addClass("poschange");
+        carehome_deaths_7_val < 0 ? $("#carehome_deaths_7").addClass("negchange") : $("#carehome_deaths_7").addClass("poschange");
+        domestic_deaths_7_val < 0 ? $("#domestic_deaths_7").addClass("negchange") : $("#domestic_deaths_7").addClass("poschange");
 
         // Set widths for bar charts
         document.getElementById('bar-left-positive').style.width = male_positive_val;
@@ -164,8 +187,5 @@ $.ajax({
         document.getElementById('bar-left-deaths').style.width = male_deaths_val;
         document.getElementById('bar-right-deaths').style.width = female_deaths_val;
 
-
-        // Set colour for data change value if positive/negative
-        
     }
 });
