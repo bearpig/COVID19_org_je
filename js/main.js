@@ -78,8 +78,8 @@ $.ajax({
         var confirmed_7_val = (Number(data.COVID19[0].Confirmedcases) - Number(data.COVID19[6].Confirmedcases)).toFixed(0);
         var pending_7_val = (Number(data.COVID19[0].Pendingresults) - Number(data.COVID19[6].Pendingresults)).toFixed(0);
         var negative_7_val = (Number(data.COVID19[0].Negativetests) - Number(data.COVID19[6].Negativetests)).toFixed(0);
-        var active_lastweek_val = Number(data.COVID19[6].Confirmedcases) - (Number(data.COVID19[6].Recovered) + Number(deaths_classification.COVID19DeathsClassification[6]['LaboratoryProvenCovid-19']));
-        var active_7_val = (active_val - active_yesterday_val).toFixed(0);
+        var active_lastweek_val = formatNumber(data.COVID19[6].KnownActiveCases);
+        var active_7_val = (active_val - active_lastweek_val).toFixed(0);
         var recovered_7_val = (Number(data.COVID19[0].Recovered) - Number(data.COVID19[6].Recovered)).toFixed(0);
         var deaths_7_val = (Number(data.COVID19[0].Deaths) - Number(data.COVID19[6].Deaths)).toFixed(0);
 
@@ -177,6 +177,32 @@ $.ajax({
         hospital_deaths_7_val < 0 ? $("#hospital_deaths_7").addClass("negchange") : $("#hospital_deaths_7").addClass("poschange");
         carehome_deaths_7_val < 0 ? $("#carehome_deaths_7").addClass("negchange") : $("#carehome_deaths_7").addClass("poschange");
         domestic_deaths_7_val < 0 ? $("#domestic_deaths_7").addClass("negchange") : $("#domestic_deaths_7").addClass("poschange");
+
+        if (tested_people_24_val == 0) { $("#tested_24").removeClass(["poschange", "negchange"])};
+        if (confirmed_24_val == 0) { $("#confirmed_24").removeClass(["poschange", "negchange"])};
+        if (pending_24_val == 0) { $("#pending_24").removeClass(["poschange", "negchange"])};
+        if (negative_24_val == 0) { $("#negative_24").removeClass(["poschange", "negchange"])};
+        if (active_24_val == 0) { $("#active_24").removeClass(["poschange", "negchange"])};
+        if (recovered_24_val == 0) { $("#recovered_24").removeClass(["poschange", "negchange"])};
+        if (deaths_24_val == 0) { $("#deaths_24").removeClass(["poschange", "negchange"])};
+        if (hospital_covid19_24_val == 0) { $("#hospital_covid19_24").removeClass(["poschange", "negchange"])};
+        if (carehome_deaths_24_val == 0) { $("#hospital_deaths_24").removeClass(["poschange", "negchange"])};
+        if (carehome_deaths_24_val == 0) { $("#carehome_deaths_24").removeClass(["poschange", "negchange"])};
+        if (domestic_deaths_24_val == 0) { $("#domestic_deaths_24").removeClass(["poschange", "negchange"])};
+
+        if (tested_people_7_val == 0) { $("#tested_7").removeClass(["poschange", "negchange"])};
+        if (confirmed_7_val == 0) { $("#confirmed_7").removeClass(["poschange", "negchange"])};
+        if (pending_7_val == 0) { $("#pending_7").removeClass(["poschange", "negchange"])};
+        if (negative_7_val == 0) { $("#negative_7").removeClass(["poschange", "negchange"])};
+        if (active_7_val == 0) { $("#active_7").removeClass(["poschange", "negchange"])};
+        if (recovered_7_val == 0) { $("#recovered_7").removeClass(["poschange", "negchange"])};
+        if (deaths_7_val == 0) { $("#deaths_7").removeClass(["poschange", "negchange"])};
+        if (hospital_covid19_7_val == 0) { $("#hospital_covid19_7").removeClass(["poschange", "negchange"])};
+        if (carehome_deaths_7_val == 0) { $("#hospital_deaths_7").removeClass(["poschange", "negchange"])};
+        if (carehome_deaths_7_val == 0) { $("#carehome_deaths_7").removeClass(["poschange", "negchange"])};
+        if (domestic_deaths_7_val == 0) { $("#domestic_deaths_7").removeClass(["poschange", "negchange"])};
+
+        $(".poschange").prepend("+");
 
         // Set widths for bar charts
         document.getElementById('bar-left-positive').style.width = male_positive_val;

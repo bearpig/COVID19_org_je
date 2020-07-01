@@ -272,15 +272,14 @@ header {
 }
 
 .change-data {
-	font-weight: bold;
 	text-align: center;
 }
 
 .change-data.poschange {
-	color: #da3849;
+	color: #50af85;
 }
 .change-data.negchange {
-	color:#30a64a;
+	color: #ca3b48;
 }
 
 
