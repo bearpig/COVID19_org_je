@@ -61,7 +61,7 @@ $.ajax({
         var tested_people_24_val = (Number(data.COVID19[0].Totalpeopletested) - Number(data.COVID19[1].Totalpeopletested)).toFixed(0);
         var confirmed_24_val = (Number(data.COVID19[0].Confirmedcases) - Number(data.COVID19[1].Confirmedcases)).toFixed(0);
         var pending_24_val = (Number(data.COVID19[0].Pendingresults) - Number(data.COVID19[1].Pendingresults)).toFixed(0);
-        var negative_24_val = (Number(data.COVID19[0].Negativetests) - Number(data.COVID19[1].Negativetests)).toFixed(0);
+        var negative_24_val = formatNumber((Number(data.COVID19[0].Negativetests) - Number(data.COVID19[1].Negativetests)).toFixed(0));
         var active_yesterday_val = formatNumber(data.COVID19[1].KnownActiveCases);
         var active_24_val = (active_val - active_yesterday_val).toFixed(0);
         var recovered_24_val = (Number(data.COVID19[0].Recovered) - Number(data.COVID19[1].Recovered)).toFixed(0);
@@ -74,10 +74,10 @@ $.ajax({
         var domestic_deaths_24_val = (Number(deaths_place.COVID19DeathsPlace[0].Community) - Number(deaths_place.COVID19DeathsPlace[1].Community)).toFixed(0);
 
         // 7 day difference
-        var tested_people_7_val = (Number(data.COVID19[0].Totalpeopletested) - Number(data.COVID19[6].Totalpeopletested)).toFixed(0);
+        var tested_people_7_val = formatNumber((Number(data.COVID19[0].Totalpeopletested) - Number(data.COVID19[6].Totalpeopletested)).toFixed(0));
         var confirmed_7_val = (Number(data.COVID19[0].Confirmedcases) - Number(data.COVID19[6].Confirmedcases)).toFixed(0);
         var pending_7_val = (Number(data.COVID19[0].Pendingresults) - Number(data.COVID19[6].Pendingresults)).toFixed(0);
-        var negative_7_val = (Number(data.COVID19[0].Negativetests) - Number(data.COVID19[6].Negativetests)).toFixed(0);
+        var negative_7_val = formatNumber((Number(data.COVID19[0].Negativetests) - Number(data.COVID19[6].Negativetests)).toFixed(0));
         var active_lastweek_val = formatNumber(data.COVID19[6].KnownActiveCases);
         var active_7_val = (active_val - active_lastweek_val).toFixed(0);
         var recovered_7_val = (Number(data.COVID19[0].Recovered) - Number(data.COVID19[6].Recovered)).toFixed(0);
