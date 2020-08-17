@@ -41,6 +41,10 @@ $.ajax({
         var male_recovered_val = data.COVID19[0].Malerecoveredpercentage + '%';
         var female_recovered_val = data.COVID19[0].Femalerecoveredpercentage + '%';
 
+        var total_active_val = active_val;
+        var symptomatic_val = formatNumber(data.COVID19[0].Symptomatic);
+        var asymptomatic_val = formatNumber(data.COVID19[0].Asymptomatic);
+
         var hospital_occupancy_percentage_val = data.COVID19[0].Hospitaloccupancyratepercentage + '%';
         var hospital_beds_occupied_val = data.COVID19[0].Numberofhospitalbedsoccupied;
         var hospital_beds_available_val = data.COVID19[0].Numberofhospitalbedsavailable;
@@ -67,6 +71,10 @@ $.ajax({
         var recovered_24_val = (Number(data.COVID19[0].Recovered) - Number(data.COVID19[1].Recovered)).toFixed(0);
         var deaths_24_val = (Number(data.COVID19[0].Deaths) - Number(data.COVID19[1].Deaths)).toFixed(0);
 
+        var total_active_cases_24_val = active_24_val;
+        var symptomatic_24_val = formatNumber(data.COVID19[0].Symptomatic);
+        var asymptomatic_24_val = formatNumber(data.COVID19[0].Asymptomatic);
+
         var hospital_covid19_24_val = (Number(data.COVID19[0]['NumberofpatientswithCovid-19inhospital']) - Number(data.COVID19[1]['NumberofpatientswithCovid-19inhospital'])).toFixed(0);
         var hospital_deaths_yesterday_val = Number(deaths_place.COVID19DeathsPlace[1].GeneralHospital) + Number(deaths_place.COVID19DeathsPlace[1].OverdaleHospital) + Number(deaths_place.COVID19DeathsPlace[1].StSaviours);
         var hospital_deaths_24_val = (hospital_deaths_val - hospital_deaths_yesterday_val).toFixed(0);
@@ -82,6 +90,10 @@ $.ajax({
         var active_7_val = (active_val - active_lastweek_val).toFixed(0);
         var recovered_7_val = (Number(data.COVID19[0].Recovered) - Number(data.COVID19[6].Recovered)).toFixed(0);
         var deaths_7_val = (Number(data.COVID19[0].Deaths) - Number(data.COVID19[6].Deaths)).toFixed(0);
+
+        var total_active_cases_7_val = active_7_val;
+        var symptomatic_7_val = formatNumber(data.COVID19[0].Symptomatic);
+        var asymptomatic_7_val = formatNumber(data.COVID19[0].Asymptomatic);
 
         var hospital_covid19_7_val = (Number(data.COVID19[0]['NumberofpatientswithCovid-19inhospital']) - Number(data.COVID19[6]['NumberofpatientswithCovid-19inhospital'])).toFixed(0);
         var hospital_deaths_lastweek_val = Number(deaths_place.COVID19DeathsPlace[6].GeneralHospital) + Number(deaths_place.COVID19DeathsPlace[6].OverdaleHospital) + Number(deaths_place.COVID19DeathsPlace[6].StSaviours);
@@ -113,6 +125,10 @@ $.ajax({
         $("#male_recovered").append(document.createTextNode(male_recovered_val));
         $("#female_recovered").append(document.createTextNode(female_recovered_val));
 
+        $("#total_active_cases").append(document.createTextNode(total_active_val));
+        $("#symptomatic").append(document.createTextNode(symptomatic_val));
+        $("#asymptomatic").append(document.createTextNode(asymptomatic_val));
+
         $("#hospital_occupancy_percentage").append(document.createTextNode(hospital_occupancy_percentage_val));
         $("#hospital_beds_occupied").append(document.createTextNode(hospital_beds_occupied_val));
         $("#hospital_beds_total").append(document.createTextNode(hospital_beds_total_val));
@@ -140,6 +156,9 @@ $.ajax({
         $("#hospital_deaths_24").append(document.createTextNode(hospital_deaths_24_val));
         $("#carehome_deaths_24").append(document.createTextNode(carehome_deaths_24_val));
         $("#domestic_deaths_24").append(document.createTextNode(domestic_deaths_24_val));
+        $("#total_active_cases_24").append(document.createTextNode(total_active_cases_24_val));
+        $("#symptomatic_24").append(document.createTextNode(symptomatic_24_val));
+        $("#asymptomatic_24").append(document.createTextNode(asymptomatic_24_val));
 
         $("#tested_7").append(document.createTextNode(tested_people_7_val));
         $("#confirmed_7").append(document.createTextNode(confirmed_7_val));
@@ -152,6 +171,9 @@ $.ajax({
         $("#hospital_deaths_7").append(document.createTextNode(hospital_deaths_7_val));
         $("#carehome_deaths_7").append(document.createTextNode(carehome_deaths_7_val));
         $("#domestic_deaths_7").append(document.createTextNode(domestic_deaths_7_val));
+        $("#total_active_cases_7").append(document.createTextNode(total_active_cases_7_val));
+        $("#symptomatic_7").append(document.createTextNode(symptomatic_7_val));
+        $("#asymptomatic_7").append(document.createTextNode(asymptomatic_7_val));
 
         // Set colour for data change value if positive/negative
         tested_people_24_val < 0 ? $("#tested_24").addClass('negchange') : $("#tested_24").addClass('poschange');
@@ -165,6 +187,9 @@ $.ajax({
         hospital_deaths_24_val < 0 ? $("#hospital_deaths_24").addClass("negchange") : $("#hospital_deaths_24").addClass("poschange");
         carehome_deaths_24_val < 0 ? $("#carehome_deaths_24").addClass("negchange") : $("#carehome_deaths_24").addClass("poschange");
         domestic_deaths_24_val < 0 ? $("#domestic_deaths_24").addClass("negchange") : $("#domestic_deaths_24").addClass("poschange");
+        total_active_cases_24_val < 0 ? $("#total_active_cases_24").addClass('negchange') : $("#total_active_cases_24").addClass('poschange');
+        symptomatic_24_val < 0 ? $("#symptomatic_24").addClass('negchange') : $("#symptomatic_24").addClass('poschange');
+        asymptomatic_24_val < 0 ? $("#asymptomatic_24").addClass('negchange') : $("#asymptomatic_24").addClass('poschange');
 
         tested_people_7_val < 0 ? $("#tested_7").addClass("negchange") : $("#tested_7").addClass("poschange");
         confirmed_7_val < 0 ? $("#confirmed_7").addClass("negchange") : $("#confirmed_7").addClass("poschange");
@@ -177,6 +202,9 @@ $.ajax({
         hospital_deaths_7_val < 0 ? $("#hospital_deaths_7").addClass("negchange") : $("#hospital_deaths_7").addClass("poschange");
         carehome_deaths_7_val < 0 ? $("#carehome_deaths_7").addClass("negchange") : $("#carehome_deaths_7").addClass("poschange");
         domestic_deaths_7_val < 0 ? $("#domestic_deaths_7").addClass("negchange") : $("#domestic_deaths_7").addClass("poschange");
+        total_active_cases_7_val < 0 ? $("#total_active_cases_7").addClass('negchange') : $("#total_active_cases_7").addClass('poschange');
+        symptomatic_7_val < 0 ? $("#symptomatic_7").addClass('negchange') : $("#symptomatic_7").addClass('poschange');
+        asymptomatic_7_val < 0 ? $("#asymptomatic_7").addClass('negchange') : $("#asymptomatic_7").addClass('poschange');
 
         if (tested_people_24_val == 0) { $("#tested_24").removeClass(["poschange", "negchange"])};
         if (confirmed_24_val == 0) { $("#confirmed_24").removeClass(["poschange", "negchange"])};
@@ -189,6 +217,9 @@ $.ajax({
         if (carehome_deaths_24_val == 0) { $("#hospital_deaths_24").removeClass(["poschange", "negchange"])};
         if (carehome_deaths_24_val == 0) { $("#carehome_deaths_24").removeClass(["poschange", "negchange"])};
         if (domestic_deaths_24_val == 0) { $("#domestic_deaths_24").removeClass(["poschange", "negchange"])};
+        if (total_active_cases_24_val == 0) { $("#total_active_cases_24").removeClass(["poschange", "negchange"])};
+        if (symptomatic_24_val == 0) { $("#symptomatic_24").removeClass(["poschange", "negchange"])};
+        if (asymptomatic_24_val == 0) { $("#asymptomatic_24").removeClass(["poschange", "negchange"])};
 
         if (tested_people_7_val == 0) { $("#tested_7").removeClass(["poschange", "negchange"])};
         if (confirmed_7_val == 0) { $("#confirmed_7").removeClass(["poschange", "negchange"])};
@@ -201,6 +232,9 @@ $.ajax({
         if (carehome_deaths_7_val == 0) { $("#hospital_deaths_7").removeClass(["poschange", "negchange"])};
         if (carehome_deaths_7_val == 0) { $("#carehome_deaths_7").removeClass(["poschange", "negchange"])};
         if (domestic_deaths_7_val == 0) { $("#domestic_deaths_7").removeClass(["poschange", "negchange"])};
+        if (total_active_cases_7_val == 0) { $("#total_active_cases_7").removeClass(["poschange", "negchange"])};
+        if (symptomatic_7_val == 0) { $("#symptomatic_7").removeClass(["poschange", "negchange"])};
+        if (asymptomatic_7_val == 0) { $("#asymptomatic_7").removeClass(["poschange", "negchange"])};
 
         $(".poschange").prepend("+");
 

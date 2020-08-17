@@ -316,6 +316,13 @@ footer {
     display: inline !important;
 }
 
+.warning {
+	background:black;
+	padding:10px;
+	font-size:1.4rem;
+	color:white;
+}
+
 
 
 /* Mobile first queries */
