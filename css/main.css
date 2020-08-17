@@ -68,10 +68,15 @@ header {
 	font-size:0.8rem;
 }
 
-
-
 .updated span {
 	font-size:1.4rem;
+}
+
+.subtitle {
+	text-align: center;
+	color:#2b313f;
+	background:white; 
+	padding:10px 30px 0;
 }
 
 
