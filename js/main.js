@@ -46,6 +46,10 @@ $.ajax({
         var symptomatic_val = formatNumber(data.COVID19[0].Symptomatic);
         var asymptomatic_val = formatNumber(data.COVID19[0].Asymptomatic);
 
+        var cases_in_carehomes_val = formatNumber(data.COVID19[0].KnowncasesInCareHomes);
+        var cases_in_community_val = formatNumber(data.COVID19[0].KnowncasesInCommunity);
+        var cases_in_hospital_val = formatNumber(data.COVID19[0].KnowncasesInHospital);
+
         var hospital_occupancy_percentage_val = data.COVID19[0].Hospitaloccupancyratepercentage + '%';
         var hospital_beds_occupied_val = data.COVID19[0].Numberofhospitalbedsoccupied;
         var hospital_beds_available_val = data.COVID19[0].Numberofhospitalbedsavailable;
@@ -74,8 +78,12 @@ $.ajax({
         var deaths_24_val = (Number(data.COVID19[0].Deaths) - Number(data.COVID19[1].Deaths)).toFixed(0);
 
         var total_active_cases_24_val = active_24_val;
-        var symptomatic_24_val = formatNumber(data.COVID19[0].Symptomatic);
-        var asymptomatic_24_val = formatNumber(data.COVID19[0].Asymptomatic);
+        var symptomatic_24_val = formatNumber(Number(data.COVID19[0].Symptomatic)) - (Number(data.COVID19[1].Symptomatic));
+        var asymptomatic_24_val = formatNumber(Number(data.COVID19[0].Asymptomatic)) - (Number(data.COVID19[1].Asymptomatic));
+
+        var cases_in_carehomes_24_val = formatNumber(Number(data.COVID19[0].KnowncasesInCareHomes)) - (Number(data.COVID19[1].KnowncasesInCareHomes));
+        var cases_in_community_24_val = formatNumber(Number(data.COVID19[0].KnowncasesInCommunity)) - (Number(data.COVID19[1].KnowncasesInCommunity));
+        var cases_in_hospital_24_val = formatNumber(Number(data.COVID19[0].KnowncasesInHospital)) - (Number(data.COVID19[1].KnowncasesInHospital));
 
         var hospital_covid19_24_val = (Number(data.COVID19[0]['NumberofpatientswithCovid-19inhospital']) - Number(data.COVID19[1]['NumberofpatientswithCovid-19inhospital'])).toFixed(0);
         var hospital_deaths_yesterday_val = Number(deaths_place.COVID19DeathsPlace[1].GeneralHospital) + Number(deaths_place.COVID19DeathsPlace[1].OverdaleHospital) + Number(deaths_place.COVID19DeathsPlace[1].StSaviours);
@@ -95,8 +103,12 @@ $.ajax({
         var deaths_7_val = (Number(data.COVID19[0].Deaths) - Number(data.COVID19[6].Deaths)).toFixed(0);
 
         var total_active_cases_7_val = active_7_val;
-        var symptomatic_7_val = formatNumber(data.COVID19[0].Symptomatic);
-        var asymptomatic_7_val = formatNumber(data.COVID19[0].Asymptomatic);
+        var symptomatic_7_val = formatNumber(Number(data.COVID19[0].Symptomatic)) - (Number(data.COVID19[6].Symptomatic));
+        var asymptomatic_7_val = formatNumber(Number(data.COVID19[0].Asymptomatic)) - (Number(data.COVID19[6].Asymptomatic));
+
+        var cases_in_carehomes_7_val = formatNumber(Number(data.COVID19[0].KnowncasesInCareHomes)) - (Number(data.COVID19[6].KnowncasesInCareHomes));
+        var cases_in_community_7_val = formatNumber(Number(data.COVID19[0].KnowncasesInCommunity)) - (Number(data.COVID19[6].KnowncasesInCommunity));
+        var cases_in_hospital_7_val = formatNumber(Number(data.COVID19[0].KnowncasesInHospital)) - (Number(data.COVID19[6].KnowncasesInHospital));
 
         var hospital_covid19_7_val = (Number(data.COVID19[0]['NumberofpatientswithCovid-19inhospital']) - Number(data.COVID19[6]['NumberofpatientswithCovid-19inhospital'])).toFixed(0);
         var hospital_deaths_lastweek_val = Number(deaths_place.COVID19DeathsPlace[6].GeneralHospital) + Number(deaths_place.COVID19DeathsPlace[6].OverdaleHospital) + Number(deaths_place.COVID19DeathsPlace[6].StSaviours);
@@ -132,6 +144,10 @@ $.ajax({
         $("#symptomatic").append(document.createTextNode(symptomatic_val));
         $("#asymptomatic").append(document.createTextNode(asymptomatic_val));
 
+        $("#active_cases_carehomes").append(document.createTextNode(cases_in_carehomes_val));
+        $("#active_cases_community").append(document.createTextNode(cases_in_community_val));
+        $("#active_cases_hospital").append(document.createTextNode(cases_in_hospital_val));
+
         $("#hospital_occupancy_percentage").append(document.createTextNode(hospital_occupancy_percentage_val));
         $("#hospital_beds_occupied").append(document.createTextNode(hospital_beds_occupied_val));
         $("#hospital_beds_total").append(document.createTextNode(hospital_beds_total_val));
@@ -162,6 +178,9 @@ $.ajax({
         $("#total_active_cases_24").append(document.createTextNode(total_active_cases_24_val));
         $("#symptomatic_24").append(document.createTextNode(symptomatic_24_val));
         $("#asymptomatic_24").append(document.createTextNode(asymptomatic_24_val));
+        $("#active_cases_carehomes_24").append(document.createTextNode(cases_in_carehomes_24_val));
+        $("#active_cases_community_24").append(document.createTextNode(cases_in_community_24_val));
+        $("#active_cases_hospital_24").append(document.createTextNode(cases_in_hospital_24_val));
 
         $("#tested_7").append(document.createTextNode(tested_people_7_val));
         $("#confirmed_7").append(document.createTextNode(confirmed_7_val));
@@ -177,6 +196,9 @@ $.ajax({
         $("#total_active_cases_7").append(document.createTextNode(total_active_cases_7_val));
         $("#symptomatic_7").append(document.createTextNode(symptomatic_7_val));
         $("#asymptomatic_7").append(document.createTextNode(asymptomatic_7_val));
+        $("#active_cases_carehomes_7").append(document.createTextNode(cases_in_carehomes_7_val));
+        $("#active_cases_community_7").append(document.createTextNode(cases_in_community_7_val));
+        $("#active_cases_hospital_7").append(document.createTextNode(cases_in_hospital_7_val));
 
         // Set colour for data change value if positive/negative
         tested_people_24_val < 0 ? $("#tested_24").addClass('negchange') : $("#tested_24").addClass('poschange');
@@ -193,6 +215,10 @@ $.ajax({
         total_active_cases_24_val < 0 ? $("#total_active_cases_24").addClass('negchange') : $("#total_active_cases_24").addClass('poschange');
         symptomatic_24_val < 0 ? $("#symptomatic_24").addClass('negchange') : $("#symptomatic_24").addClass('poschange');
         asymptomatic_24_val < 0 ? $("#asymptomatic_24").addClass('negchange') : $("#asymptomatic_24").addClass('poschange');
+        cases_in_carehomes_24_val < 0 ? $("#active_cases_carehomes_24").addClass('negchange') : $("#active_cases_carehomes_24").addClass('poschange');
+        cases_in_community_24_val < 0 ? $("#active_cases_community_24").addClass('negchange') : $("#active_cases_community_24").addClass('poschange');
+        cases_in_hospital_24_val < 0 ? $("#active_cases_hospital_24").addClass('negchange') : $("#active_cases_hospital_24").addClass('poschange');
+
 
         tested_people_7_val < 0 ? $("#tested_7").addClass("negchange") : $("#tested_7").addClass("poschange");
         confirmed_7_val < 0 ? $("#confirmed_7").addClass("negchange") : $("#confirmed_7").addClass("poschange");
@@ -208,6 +234,9 @@ $.ajax({
         total_active_cases_7_val < 0 ? $("#total_active_cases_7").addClass('negchange') : $("#total_active_cases_7").addClass('poschange');
         symptomatic_7_val < 0 ? $("#symptomatic_7").addClass('negchange') : $("#symptomatic_7").addClass('poschange');
         asymptomatic_7_val < 0 ? $("#asymptomatic_7").addClass('negchange') : $("#asymptomatic_7").addClass('poschange');
+        cases_in_carehomes_7_val < 0 ? $("#active_cases_carehomes_7").addClass('negchange') : $("#active_cases_carehomes_7").addClass('poschange');
+        cases_in_community_7_val < 0 ? $("#active_cases_community_7").addClass('negchange') : $("#active_cases_community_7").addClass('poschange');
+        cases_in_hospital_7_val < 0 ? $("#active_cases_hospital_7").addClass('negchange') : $("#active_cases_hospital_7").addClass('poschange');
 
         if (tested_people_24_val == 0) { $("#tested_24").removeClass(["poschange", "negchange"])};
         if (confirmed_24_val == 0) { $("#confirmed_24").removeClass(["poschange", "negchange"])};
@@ -223,6 +252,9 @@ $.ajax({
         if (total_active_cases_24_val == 0) { $("#total_active_cases_24").removeClass(["poschange", "negchange"])};
         if (symptomatic_24_val == 0) { $("#symptomatic_24").removeClass(["poschange", "negchange"])};
         if (asymptomatic_24_val == 0) { $("#asymptomatic_24").removeClass(["poschange", "negchange"])};
+        if (cases_in_carehomes_24_val == 0) { $("#active_cases_carehomes_24").removeClass(["poschange", "negchange"])};
+        if (cases_in_community_24_val == 0) { $("#active_cases_community_24").removeClass(["poschange", "negchange"])};
+        if (cases_in_hospital_24_val == 0) { $("#active_cases_hospital_24").removeClass(["poschange", "negchange"])};
 
         if (tested_people_7_val == 0) { $("#tested_7").removeClass(["poschange", "negchange"])};
         if (confirmed_7_val == 0) { $("#confirmed_7").removeClass(["poschange", "negchange"])};
@@ -238,6 +270,9 @@ $.ajax({
         if (total_active_cases_7_val == 0) { $("#total_active_cases_7").removeClass(["poschange", "negchange"])};
         if (symptomatic_7_val == 0) { $("#symptomatic_7").removeClass(["poschange", "negchange"])};
         if (asymptomatic_7_val == 0) { $("#asymptomatic_7").removeClass(["poschange", "negchange"])};
+        if (cases_in_carehomes_7_val == 0) { $("#active_cases_carehomes_7").removeClass(["poschange", "negchange"])};
+        if (cases_in_community_7_val == 0) { $("#active_cases_community_7").removeClass(["poschange", "negchange"])};
+        if (cases_in_hospital_7_val == 0) { $("#active_cases_hospital_7").removeClass(["poschange", "negchange"])};
 
         $(".poschange").prepend("+");
 
