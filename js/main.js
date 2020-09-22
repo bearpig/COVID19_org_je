@@ -28,11 +28,7 @@ $.ajax({
         var recovered_val = formatNumber(data.COVID19[0].Recovered);
         var deaths_val = formatNumber(data.COVID19[0].Deaths);
 
-        var tested_people_val = formatNumber(data.COVID19[0].Totalpeopletested);
-        var tested_population_val = (data.COVID19[0].Totalpeopletested / 107800) * 100;   // tested population percentage
-        var tested_population_rounded_val = (Number(tested_population_val * 100) / 100).toFixed(1) + '%'; // population percentage rounded
-        var tested_results_val = formatNumber(data.COVID19[0].Totalresultsback);
-        var tested_samples_val = formatNumber(data.COVID19[0].Totalsamplestested);
+        var total_tested_val = formatNumber(data.COVID19[0].Totaltests);
 
         var average_positive_val = data.COVID19[0].Averageagetestedpositive;
         var average_recovered_val = data.COVID19[0].Averageagerecovered;
@@ -67,7 +63,7 @@ $.ajax({
         var female_deaths_val = deaths_gender.COVID19DeathsGender[0].Female + '%';
 
         // 24 hour difference
-        var tested_people_24_val = formatNumber((Number(data.COVID19[0].Totalpeopletested) - Number(data.COVID19[1].Totalpeopletested)).toFixed(0));
+        var total_tested_24_val = formatNumber((Number(data.COVID19[0].Totaltests) - Number(data.COVID19[1].Totaltests)).toFixed(0));
         var confirmed_24_val = (Number(data.COVID19[0].Totalconfirmedpositivecases) - Number(data.COVID19[1].Totalconfirmedpositivecases)).toFixed(0);
         var pending_24_val = (Number(data.COVID19[0].Pendingresults) - Number(data.COVID19[1].Pendingresults)).toFixed(0);
         var negative_total_24_val = (Number(data.COVID19[1].Negativetestspriorto1July2020)) + (Number(data.COVID19[1].Negativetestssince1July2020));
@@ -92,7 +88,7 @@ $.ajax({
         var domestic_deaths_24_val = (Number(deaths_place.COVID19DeathsPlace[0].Community) - Number(deaths_place.COVID19DeathsPlace[1].Community)).toFixed(0);
 
         // 7 day difference
-        var tested_people_7_val = formatNumber((Number(data.COVID19[0].Totalpeopletested) - Number(data.COVID19[6].Totalpeopletested)).toFixed(0));
+        var total_tested_7_val = formatNumber((Number(data.COVID19[0].Totaltests) - Number(data.COVID19[6].Totaltests)).toFixed(0));
         var confirmed_7_val = (Number(data.COVID19[0].Totalconfirmedpositivecases) - Number(data.COVID19[6].Totalconfirmedpositivecases)).toFixed(0);
         var pending_7_val = (Number(data.COVID19[0].Pendingresults) - Number(data.COVID19[6].Pendingresults)).toFixed(0);
         var negative_total_7_val = (Number(data.COVID19[6].Negativetestspriorto1July2020)) + (Number(data.COVID19[6].Negativetestssince1July2020));
@@ -126,10 +122,7 @@ $.ajax({
         $("#recovered").append(document.createTextNode(recovered_val));
         $("#deaths").append(document.createTextNode(deaths_val));
 
-        $("#tested_people").append(document.createTextNode(tested_people_val));
-        $("#tested_population").append(document.createTextNode(tested_population_rounded_val));
-        $("#tested_results").append(document.createTextNode(tested_results_val));
-        $("#tested_samples").append(document.createTextNode(tested_samples_val));
+        $("#total_tested").append(document.createTextNode(total_tested_val));
 
         $("#average_positive").append(document.createTextNode(average_positive_val));
         $("#average_recovered").append(document.createTextNode(average_recovered_val));
@@ -164,7 +157,7 @@ $.ajax({
         $("#male_deaths").append(document.createTextNode(male_deaths_val));
         $("#female_deaths").append(document.createTextNode(female_deaths_val));
 
-        $("#tested_24").append(document.createTextNode(tested_people_24_val));
+        $("#tested_24").append(document.createTextNode(total_tested_24_val));
         $("#confirmed_24").append(document.createTextNode(confirmed_24_val));
         $("#pending_24").append(document.createTextNode(pending_24_val));
         $("#negative_24").append(document.createTextNode(negative_24_val));
@@ -182,7 +175,7 @@ $.ajax({
         $("#active_cases_community_24").append(document.createTextNode(cases_in_community_24_val));
         $("#active_cases_hospital_24").append(document.createTextNode(cases_in_hospital_24_val));
 
-        $("#tested_7").append(document.createTextNode(tested_people_7_val));
+        $("#tested_7").append(document.createTextNode(total_tested_7_val));
         $("#confirmed_7").append(document.createTextNode(confirmed_7_val));
         $("#pending_7").append(document.createTextNode(pending_7_val));
         $("#negative_7").append(document.createTextNode(negative_7_val));
@@ -201,7 +194,7 @@ $.ajax({
         $("#active_cases_hospital_7").append(document.createTextNode(cases_in_hospital_7_val));
 
         // Set colour for data change value if positive/negative
-        tested_people_24_val < 0 ? $("#tested_24").addClass('negchange') : $("#tested_24").addClass('poschange');
+        total_tested_24_val < 0 ? $("#tested_24").addClass('negchange') : $("#tested_24").addClass('poschange');
         confirmed_24_val < 0 ? $("#confirmed_24").addClass('negchange') : $("#confirmed_24").addClass('poschange');
         pending_24_val < 0 ? $("#pending_24").addClass("negchange") : $("#pending_24").addClass("poschange");
         negative_24_val < 0 ? $("#negative_24").addClass("negchange") : $("#negative_24").addClass("poschange");
@@ -220,7 +213,7 @@ $.ajax({
         cases_in_hospital_24_val < 0 ? $("#active_cases_hospital_24").addClass('negchange') : $("#active_cases_hospital_24").addClass('poschange');
 
 
-        tested_people_7_val < 0 ? $("#tested_7").addClass("negchange") : $("#tested_7").addClass("poschange");
+        total_tested_7_val < 0 ? $("#tested_7").addClass("negchange") : $("#tested_7").addClass("poschange");
         confirmed_7_val < 0 ? $("#confirmed_7").addClass("negchange") : $("#confirmed_7").addClass("poschange");
         pending_7_val < 0 ? $("#pending_7").addClass("negchange") : $("#pending_7").addClass("poschange");
         negative_7_val < 0 ? $("#negative_7").addClass("negchange") : $("#negative_7").addClass("poschange");
@@ -238,7 +231,7 @@ $.ajax({
         cases_in_community_7_val < 0 ? $("#active_cases_community_7").addClass('negchange') : $("#active_cases_community_7").addClass('poschange');
         cases_in_hospital_7_val < 0 ? $("#active_cases_hospital_7").addClass('negchange') : $("#active_cases_hospital_7").addClass('poschange');
 
-        if (tested_people_24_val == 0) { $("#tested_24").removeClass(["poschange", "negchange"])};
+        if (total_tested_24_val == 0) { $("#tested_24").removeClass(["poschange", "negchange"])};
         if (confirmed_24_val == 0) { $("#confirmed_24").removeClass(["poschange", "negchange"])};
         if (pending_24_val == 0) { $("#pending_24").removeClass(["poschange", "negchange"])};
         if (negative_24_val == 0) { $("#negative_24").removeClass(["poschange", "negchange"])};
@@ -256,7 +249,7 @@ $.ajax({
         if (cases_in_community_24_val == 0) { $("#active_cases_community_24").removeClass(["poschange", "negchange"])};
         if (cases_in_hospital_24_val == 0) { $("#active_cases_hospital_24").removeClass(["poschange", "negchange"])};
 
-        if (tested_people_7_val == 0) { $("#tested_7").removeClass(["poschange", "negchange"])};
+        if (total_tested_7_val == 0) { $("#tested_7").removeClass(["poschange", "negchange"])};
         if (confirmed_7_val == 0) { $("#confirmed_7").removeClass(["poschange", "negchange"])};
         if (pending_7_val == 0) { $("#pending_7").removeClass(["poschange", "negchange"])};
         if (negative_7_val == 0) { $("#negative_7").removeClass(["poschange", "negchange"])};
