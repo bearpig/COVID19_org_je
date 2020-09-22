@@ -19,7 +19,7 @@ $.ajax({
 
         // Assign variables from JSON data
         var date_val = data.COVID19[0].DateTime.replace("string;#", "");
-        var confirmed_val = formatNumber(data.COVID19[0].Confirmedcases);
+        var confirmed_val = formatNumber(data.COVID19[0].Totalconfirmedpositivecases);
         var pending_val = formatNumber(data.COVID19[0].Pendingresults);
         var negative_total_val = (Number(data.COVID19[0].Negativetestspriorto1July2020)) + (Number(data.COVID19[0].Negativetestssince1July2020));
         var negative_val = formatNumber(negative_total_val);
@@ -68,7 +68,7 @@ $.ajax({
 
         // 24 hour difference
         var tested_people_24_val = formatNumber((Number(data.COVID19[0].Totalpeopletested) - Number(data.COVID19[1].Totalpeopletested)).toFixed(0));
-        var confirmed_24_val = (Number(data.COVID19[0].Confirmedcases) - Number(data.COVID19[1].Confirmedcases)).toFixed(0);
+        var confirmed_24_val = (Number(data.COVID19[0].Totalconfirmedpositivecases) - Number(data.COVID19[1].Totalconfirmedpositivecases)).toFixed(0);
         var pending_24_val = (Number(data.COVID19[0].Pendingresults) - Number(data.COVID19[1].Pendingresults)).toFixed(0);
         var negative_total_24_val = (Number(data.COVID19[1].Negativetestspriorto1July2020)) + (Number(data.COVID19[1].Negativetestssince1July2020));
         var negative_24_val = formatNumber((Number(negative_total_val) - Number(negative_total_24_val)).toFixed(0));
@@ -93,7 +93,7 @@ $.ajax({
 
         // 7 day difference
         var tested_people_7_val = formatNumber((Number(data.COVID19[0].Totalpeopletested) - Number(data.COVID19[6].Totalpeopletested)).toFixed(0));
-        var confirmed_7_val = (Number(data.COVID19[0].Confirmedcases) - Number(data.COVID19[6].Confirmedcases)).toFixed(0);
+        var confirmed_7_val = (Number(data.COVID19[0].Totalconfirmedpositivecases) - Number(data.COVID19[6].Totalconfirmedpositivecases)).toFixed(0);
         var pending_7_val = (Number(data.COVID19[0].Pendingresults) - Number(data.COVID19[6].Pendingresults)).toFixed(0);
         var negative_total_7_val = (Number(data.COVID19[6].Negativetestspriorto1July2020)) + (Number(data.COVID19[6].Negativetestssince1July2020));
         var negative_7_val = formatNumber((Number(negative_total_val) - Number(negative_total_7_val)).toFixed(0));
