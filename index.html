@@ -54,37 +54,50 @@
 
       </div>
     </div>  
-    <div class="subtitle">This is a Covid19 test results tracker for the <u>Island of Jersey</u> in the Channel Islands</div>
+   <!--  <div class="subtitle">This is a Covid19 test results tracker for the <u>Island of Jersey</u> in the Channel Islands</div> -->
     <div class="warning" style="text-align: center; margin-top:5px;">This data is currently broken due to incorrect data from the Government feed</div>
   </header>
 
   <div class="container">
 
     <div class="row">    
-
-      <div class=" four columns">
-        <h2>Number of Tests</h2>
-
-        <div class="card">
-        
-          <div class="tested_people">
-            <div class="data-label">Tests</div>
-            <div id="total_tested" class="data"></div>
-            <div class="change">1 day change</div>
-            <div id="tested_24" class="change-data"></div>
-            <div class="change">1 week change</div>
-            <div id="tested_7" class="change-data"></div>
-          </div>
-        </div>
+      <div class="four columns">
+        <h2>About</h2>
+        A <a href="http://www.bearpig.com" target="_blank">bearpig</a> & <a href="http://www.openrock.co/" target="_blank">openrock</a> hack using COVID19 data produced by the Government of Jersey via <a href="https://opendata.gov.je/dataset/coronavirus-covid-19-number-of-cases-in-jersey">Open Data Portal</a> under the <a href="https://opendata.gov.je/pages/open-government-licence-jersey-ogl-j-v1-0" target="_blank">OPL-J Licence</a>. <br/> You can find the project on Github <a href="https://github.com/bearpig/COVID19_org_je" target="_blank"> here.</a>
       </div>
 
       <div class="eight columns">
+        <h2>Number of Tests</h2>
+
+        <div class="card">
+
+          <div class="tested_people">
+            <div class="six columns">    
+              <div class="data-label">Tests</div>
+              <div id="total_tested" class="data"></div>
+            </div>
+            <div class="six columns">
+              <div class="change">1 day change</div>
+              <div id="tested_24" class="change-data"></div>
+              <div class="change">1 week change</div>
+              <div id="tested_7" class="change-data"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<hr>
+
+    <div class="row">
+
+      <div class="twelve columns">
 
         <h2>Test Results</h2>
 
         <div class="row">
   
-          <div class="card confirmed six columns">                
+          <div class="card confirmed four columns">                
             <div class="data-label">Confirmed Cases</div>
             <div id="confirmedcases" class="data"></div>
             <div class="change">Day</div>
@@ -94,7 +107,7 @@
           </div>
          
 
-          <div class="card negative six columns">               
+          <div class="card negative four columns">               
             <div class="data-label">Negative Results</div>
             <div id="negativetests" class="data"></div>
             <div class="change">1 day change</div>
@@ -102,12 +115,8 @@
             <div class="change">1 week change</div>
             <div id="negative_7" class="change-data"></div>
           </div>
-
-        </div>
-
-        <div class="row">
           
-          <div class="card pending six columns">                
+          <div class="card pending four columns">                
             <div class="data-label">Pending Results</div>
             <div id="pendingresults" class="data"></div>
             <div class="change">1 day change</div>
@@ -116,7 +125,11 @@
             <div id="pending_7" class="change-data"></div>
           </div>
 
-          <div class="card active six columns">                
+         </div>
+
+        <div class="row">
+
+          <div class="card active four columns">                
             <div class="data-label">Active Cases</div>
             <div id="active" class="data"></div>
             <div class="change">1 day change</div>
@@ -125,11 +138,7 @@
             <div id="active_7" class="change-data"></div>
           </div>
 
-        </div>
-
-        <div class="row">
-
-          <div class="card recovered six columns">               
+          <div class="card recovered four columns">               
             <div class="data-label">Recovered **</div>
             <div id="recovered" class="data"></div>
             <div class="change">1 day change</div>
@@ -138,7 +147,7 @@
             <div id="recovered_7" class="change-data"></div>
           </div>
 
-          <div class="card death six columns">                
+          <div class="card death four columns">                
             <div class="data-label">Deaths </div>
             <div id="deaths" class="data"></div>
             <div class="change">1 day change</div>
@@ -421,7 +430,7 @@
       <div class="twelve column">
         <footer>
 
-          <p>A <a href="http://www.bearpig.com" target="_blank">bearpig</a> & <a href="http://www.openrock.co/" target="_blank">openrock</a> hack using data produced by the Government of Jersey via <a href="https://opendata.gov.je/dataset/coronavirus-covid-19-number-of-cases-in-jersey">Open Data Portal</a> under the <a href="https://opendata.gov.je/pages/open-government-licence-jersey-ogl-j-v1-0" target="_blank">OPL-J Licence</a>. You can find the project on Github <a href="https://github.com/bearpig/COVID19_org_je" target="_blank"> here.</a></p>
+         
           <p>#StayHomeStaySafe</p>
           <div class="credit">
             
