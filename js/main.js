@@ -46,12 +46,6 @@ $.ajax({
         var cases_in_community_val = formatNumber(data.COVID19[0].KnowncasesInCommunity);
         var cases_in_hospital_val = formatNumber(data.COVID19[0].KnowncasesInHospital);
 
-        var hospital_occupancy_percentage_val = data.COVID19[0].Hospitaloccupancyratepercentage + '%';
-        var hospital_beds_occupied_val = data.COVID19[0].Numberofhospitalbedsoccupied;
-        var hospital_beds_available_val = data.COVID19[0].Numberofhospitalbedsavailable;
-        var hospital_beds_total_val = Number(hospital_beds_occupied_val) + Number(hospital_beds_available_val);
-        var hospital_covid19_val = data.COVID19[0]['NumberofpatientswithCovid-19inhospital'];
-
         var deaths_lab_proven_val = deaths_classification.COVID19DeathsClassification[0]['LaboratoryProvenCovid-19'];
         var deaths_lab_presumed_val = deaths_classification.COVID19DeathsClassification[0]['ProbableCovid-19'];
 
@@ -81,7 +75,6 @@ $.ajax({
         var cases_in_community_24_val = formatNumber(Number(data.COVID19[0].KnowncasesInCommunity)) - (Number(data.COVID19[1].KnowncasesInCommunity));
         var cases_in_hospital_24_val = formatNumber(Number(data.COVID19[0].KnowncasesInHospital)) - (Number(data.COVID19[1].KnowncasesInHospital));
 
-        var hospital_covid19_24_val = (Number(data.COVID19[0]['NumberofpatientswithCovid-19inhospital']) - Number(data.COVID19[1]['NumberofpatientswithCovid-19inhospital'])).toFixed(0);
         var hospital_deaths_yesterday_val = Number(deaths_place.COVID19DeathsPlace[1].GeneralHospital) + Number(deaths_place.COVID19DeathsPlace[1].OverdaleHospital) + Number(deaths_place.COVID19DeathsPlace[1].StSaviours);
         var hospital_deaths_24_val = (hospital_deaths_val - hospital_deaths_yesterday_val).toFixed(0);
         var carehome_deaths_24_val = (Number(deaths_place.COVID19DeathsPlace[0].CareHome) - Number(deaths_place.COVID19DeathsPlace[1].CareHome)).toFixed(0);
@@ -106,7 +99,6 @@ $.ajax({
         var cases_in_community_7_val = formatNumber(Number(data.COVID19[0].KnowncasesInCommunity)) - (Number(data.COVID19[6].KnowncasesInCommunity));
         var cases_in_hospital_7_val = formatNumber(Number(data.COVID19[0].KnowncasesInHospital)) - (Number(data.COVID19[6].KnowncasesInHospital));
 
-        var hospital_covid19_7_val = (Number(data.COVID19[0]['NumberofpatientswithCovid-19inhospital']) - Number(data.COVID19[6]['NumberofpatientswithCovid-19inhospital'])).toFixed(0);
         var hospital_deaths_lastweek_val = Number(deaths_place.COVID19DeathsPlace[6].GeneralHospital) + Number(deaths_place.COVID19DeathsPlace[6].OverdaleHospital) + Number(deaths_place.COVID19DeathsPlace[6].StSaviours);
         var hospital_deaths_7_val = (hospital_deaths_val - hospital_deaths_yesterday_val).toFixed(0);
         var carehome_deaths_7_val = (Number(deaths_place.COVID19DeathsPlace[0].CareHome) - Number(deaths_place.COVID19DeathsPlace[6].CareHome)).toFixed(0);
