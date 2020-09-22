@@ -56,6 +56,10 @@ $.ajax({
         var male_deaths_val = deaths_gender.COVID19DeathsGender[0].Male + '%';
         var female_deaths_val = deaths_gender.COVID19DeathsGender[0].Female + '%';
 
+        var reason_symptomatic_val = formatNumber(data.COVID19[0].Reasonfortestseekinghealthcaresymptomatic);
+        var reason_travel_val = formatNumber(data.COVID19[0].Reasonfortestinboundtravel);
+        var reason_screening_val = formatNumber(data.COVID19[0].Reasonfortestonislandsurveillancescreening);
+
         // 24 hour difference
         var total_tested_24_val = formatNumber((Number(data.COVID19[0].Totaltests) - Number(data.COVID19[1].Totaltests)).toFixed(0));
         var confirmed_24_val = (Number(data.COVID19[0].Totalconfirmedpositivecases) - Number(data.COVID19[1].Totalconfirmedpositivecases)).toFixed(0);
@@ -79,6 +83,12 @@ $.ajax({
         var hospital_deaths_24_val = (hospital_deaths_val - hospital_deaths_yesterday_val).toFixed(0);
         var carehome_deaths_24_val = (Number(deaths_place.COVID19DeathsPlace[0].CareHome) - Number(deaths_place.COVID19DeathsPlace[1].CareHome)).toFixed(0);
         var domestic_deaths_24_val = (Number(deaths_place.COVID19DeathsPlace[0].Community) - Number(deaths_place.COVID19DeathsPlace[1].Community)).toFixed(0);
+
+        var reason_symptomatic_24_val = formatNumber(Number(data.COVID19[0].Reasonfortestseekinghealthcaresymptomatic) - Number(data.COVID19[1].Reasonfortestseekinghealthcaresymptomatic));
+        var reason_travel_24_val = formatNumber(Number(data.COVID19[0].Reasonfortestinboundtravel) - Number(data.COVID19[1].Reasonfortestinboundtravel));
+        var reason_screening_24_val = formatNumber(Number(data.COVID19[0].Reasonfortestonislandsurveillancescreening) - Number(data.COVID19[1].Reasonfortestonislandsurveillancescreening));
+       
+       
 
         // 7 day difference
         var total_tested_7_val = formatNumber((Number(data.COVID19[0].Totaltests) - Number(data.COVID19[6].Totaltests)).toFixed(0));
@@ -104,6 +114,11 @@ $.ajax({
         var carehome_deaths_7_val = (Number(deaths_place.COVID19DeathsPlace[0].CareHome) - Number(deaths_place.COVID19DeathsPlace[6].CareHome)).toFixed(0);
         var domestic_deaths_7_val = (Number(deaths_place.COVID19DeathsPlace[0].Community) - Number(deaths_place.COVID19DeathsPlace[6].Community)).toFixed(0);
 
+        var reason_symptomatic_7_val = formatNumber(Number(data.COVID19[0].Reasonfortestseekinghealthcaresymptomatic) - Number(data.COVID19[6].Reasonfortestseekinghealthcaresymptomatic));
+        var reason_travel_7_val = formatNumber(Number(data.COVID19[0].Reasonfortestinboundtravel) - Number(data.COVID19[6].Reasonfortestinboundtravel));
+        var reason_screening_7_val = formatNumber(Number(data.COVID19[0].Reasonfortestonislandsurveillancescreening) - Number(data.COVID19[6].Reasonfortestonislandsurveillancescreening));
+
+     
 
         // Add numbers from variables into HTML
         $("#date").append(document.createTextNode(date_val));
@@ -133,11 +148,6 @@ $.ajax({
         $("#active_cases_community").append(document.createTextNode(cases_in_community_val));
         $("#active_cases_hospital").append(document.createTextNode(cases_in_hospital_val));
 
-        $("#hospital_occupancy_percentage").append(document.createTextNode(hospital_occupancy_percentage_val));
-        $("#hospital_beds_occupied").append(document.createTextNode(hospital_beds_occupied_val));
-        $("#hospital_beds_total").append(document.createTextNode(hospital_beds_total_val));
-        $("#hospital_covid19").append(document.createTextNode(hospital_covid19_val));
-
         $("#deaths_total").append(document.createTextNode(deaths_val));
         $("#deaths_lab_proven").append(document.createTextNode(deaths_lab_proven_val));
         $("#deaths_lab_presumed").append(document.createTextNode(deaths_lab_presumed_val));
@@ -149,6 +159,11 @@ $.ajax({
         $("#male_deaths").append(document.createTextNode(male_deaths_val));
         $("#female_deaths").append(document.createTextNode(female_deaths_val));
 
+        $("#reason_symptomatic").append(document.createTextNode(reason_symptomatic_val));
+        $("#reason_travel").append(document.createTextNode(reason_travel_val));
+        $("#reason_screening").append(document.createTextNode(reason_screening_val));
+
+
         $("#tested_24").append(document.createTextNode(total_tested_24_val));
         $("#confirmed_24").append(document.createTextNode(confirmed_24_val));
         $("#pending_24").append(document.createTextNode(pending_24_val));
@@ -156,7 +171,6 @@ $.ajax({
         $("#active_24").append(document.createTextNode(active_24_val));
         $("#recovered_24").append(document.createTextNode(recovered_24_val));
         $("#deaths_24").append(document.createTextNode(deaths_24_val));
-        $("#hospital_covid19_24").append(document.createTextNode(hospital_covid19_24_val));
         $("#hospital_deaths_24").append(document.createTextNode(hospital_deaths_24_val));
         $("#carehome_deaths_24").append(document.createTextNode(carehome_deaths_24_val));
         $("#domestic_deaths_24").append(document.createTextNode(domestic_deaths_24_val));
@@ -166,6 +180,10 @@ $.ajax({
         $("#active_cases_carehomes_24").append(document.createTextNode(cases_in_carehomes_24_val));
         $("#active_cases_community_24").append(document.createTextNode(cases_in_community_24_val));
         $("#active_cases_hospital_24").append(document.createTextNode(cases_in_hospital_24_val));
+        $("#reason_symptomatic_24").append(document.createTextNode(reason_symptomatic_24_val));
+        $("#reason_travel_24").append(document.createTextNode(reason_travel_24_val));
+        $("#reason_screening_24").append(document.createTextNode(reason_screening_24_val));
+     
 
         $("#tested_7").append(document.createTextNode(total_tested_7_val));
         $("#confirmed_7").append(document.createTextNode(confirmed_7_val));
@@ -174,7 +192,6 @@ $.ajax({
         $("#active_7").append(document.createTextNode(active_7_val));
         $("#recovered_7").append(document.createTextNode(recovered_7_val));
         $("#deaths_7").append(document.createTextNode(deaths_7_val));
-        $("#hospital_covid19_7").append(document.createTextNode(hospital_covid19_7_val));
         $("#hospital_deaths_7").append(document.createTextNode(hospital_deaths_7_val));
         $("#carehome_deaths_7").append(document.createTextNode(carehome_deaths_7_val));
         $("#domestic_deaths_7").append(document.createTextNode(domestic_deaths_7_val));
@@ -184,7 +201,11 @@ $.ajax({
         $("#active_cases_carehomes_7").append(document.createTextNode(cases_in_carehomes_7_val));
         $("#active_cases_community_7").append(document.createTextNode(cases_in_community_7_val));
         $("#active_cases_hospital_7").append(document.createTextNode(cases_in_hospital_7_val));
-
+        $("#reason_symptomatic_7").append(document.createTextNode(reason_symptomatic_7_val));
+        $("#reason_travel_7").append(document.createTextNode(reason_travel_7_val));
+        $("#reason_screening_7").append(document.createTextNode(reason_screening_7_val));
+     
+       
         // Set colour for data change value if positive/negative
         total_tested_24_val < 0 ? $("#tested_24").addClass('negchange') : $("#tested_24").addClass('poschange');
         confirmed_24_val < 0 ? $("#confirmed_24").addClass('negchange') : $("#confirmed_24").addClass('poschange');
@@ -193,7 +214,6 @@ $.ajax({
         active_24_val < 0 ? $("#active_24").addClass("negchange") : $("#active_24").addClass("poschange");
         recovered_24_val < 0 ? $("#recovered_24").addClass("negchange") : $("#recovered_24").addClass("poschange");
         deaths_24_val < 0 ? $("#deaths_24").addClass("negchange") : $("#deaths_24").addClass("poschange");
-        hospital_covid19_24_val < 0 ? $("#hospital_covid19_24").addClass("negchange") : $("#hospital_covid19_24").addClass("poschange");
         hospital_deaths_24_val < 0 ? $("#hospital_deaths_24").addClass("negchange") : $("#hospital_deaths_24").addClass("poschange");
         carehome_deaths_24_val < 0 ? $("#carehome_deaths_24").addClass("negchange") : $("#carehome_deaths_24").addClass("poschange");
         domestic_deaths_24_val < 0 ? $("#domestic_deaths_24").addClass("negchange") : $("#domestic_deaths_24").addClass("poschange");
@@ -203,7 +223,10 @@ $.ajax({
         cases_in_carehomes_24_val < 0 ? $("#active_cases_carehomes_24").addClass('negchange') : $("#active_cases_carehomes_24").addClass('poschange');
         cases_in_community_24_val < 0 ? $("#active_cases_community_24").addClass('negchange') : $("#active_cases_community_24").addClass('poschange');
         cases_in_hospital_24_val < 0 ? $("#active_cases_hospital_24").addClass('negchange') : $("#active_cases_hospital_24").addClass('poschange');
-
+        reason_symptomatic_24_val < 0 ? $("#reason_symptomatic_24").addClass('negchange') : $("#reason_symptomatic_24").addClass('poschange');
+        reason_travel_24_val < 0 ? $("#reason_travel_24").addClass('negchange') : $("#reason_travel_24").addClass('poschange');
+        reason_screening_24_val < 0 ? $("#reason_screening_24").addClass('negchange') : $("#reason_screening_24").addClass('poschange');
+      
 
         total_tested_7_val < 0 ? $("#tested_7").addClass("negchange") : $("#tested_7").addClass("poschange");
         confirmed_7_val < 0 ? $("#confirmed_7").addClass("negchange") : $("#confirmed_7").addClass("poschange");
@@ -212,7 +235,6 @@ $.ajax({
         active_7_val < 0 ? $("#active_7").addClass("negchange") : $("#active_7").addClass("poschange");
         recovered_7_val < 0 ? $("#recovered_7").addClass("negchange") : $("#recovered_7").addClass("poschange");
         deaths_7_val < 0 ? $("#deaths_7").addClass("negchange") : $("#deaths_7").addClass("poschange");
-        hospital_covid19_7_val < 0 ? $("#hospital_covid19_7").addClass("negchange") : $("#hospital_covid19_7").addClass("poschange");
         hospital_deaths_7_val < 0 ? $("#hospital_deaths_7").addClass("negchange") : $("#hospital_deaths_7").addClass("poschange");
         carehome_deaths_7_val < 0 ? $("#carehome_deaths_7").addClass("negchange") : $("#carehome_deaths_7").addClass("poschange");
         domestic_deaths_7_val < 0 ? $("#domestic_deaths_7").addClass("negchange") : $("#domestic_deaths_7").addClass("poschange");
@@ -222,6 +244,9 @@ $.ajax({
         cases_in_carehomes_7_val < 0 ? $("#active_cases_carehomes_7").addClass('negchange') : $("#active_cases_carehomes_7").addClass('poschange');
         cases_in_community_7_val < 0 ? $("#active_cases_community_7").addClass('negchange') : $("#active_cases_community_7").addClass('poschange');
         cases_in_hospital_7_val < 0 ? $("#active_cases_hospital_7").addClass('negchange') : $("#active_cases_hospital_7").addClass('poschange');
+        reason_symptomatic_7_val < 0 ? $("#reason_symptomatic_7").addClass('negchange') : $("#reason_symptomatic_7").addClass('poschange');
+        reason_travel_7_val < 0 ? $("#reason_travel_7").addClass('negchange') : $("#reason_travel_7").addClass('poschange');
+        reason_screening_7_val < 0 ? $("#reason_screening_7").addClass('negchange') : $("#reason_screening_7").addClass('poschange');
 
         if (total_tested_24_val == 0) { $("#tested_24").removeClass(["poschange", "negchange"])};
         if (confirmed_24_val == 0) { $("#confirmed_24").removeClass(["poschange", "negchange"])};
@@ -230,7 +255,6 @@ $.ajax({
         if (active_24_val == 0) { $("#active_24").removeClass(["poschange", "negchange"])};
         if (recovered_24_val == 0) { $("#recovered_24").removeClass(["poschange", "negchange"])};
         if (deaths_24_val == 0) { $("#deaths_24").removeClass(["poschange", "negchange"])};
-        if (hospital_covid19_24_val == 0) { $("#hospital_covid19_24").removeClass(["poschange", "negchange"])};
         if (carehome_deaths_24_val == 0) { $("#hospital_deaths_24").removeClass(["poschange", "negchange"])};
         if (carehome_deaths_24_val == 0) { $("#carehome_deaths_24").removeClass(["poschange", "negchange"])};
         if (domestic_deaths_24_val == 0) { $("#domestic_deaths_24").removeClass(["poschange", "negchange"])};
@@ -240,6 +264,10 @@ $.ajax({
         if (cases_in_carehomes_24_val == 0) { $("#active_cases_carehomes_24").removeClass(["poschange", "negchange"])};
         if (cases_in_community_24_val == 0) { $("#active_cases_community_24").removeClass(["poschange", "negchange"])};
         if (cases_in_hospital_24_val == 0) { $("#active_cases_hospital_24").removeClass(["poschange", "negchange"])};
+        if (reason_symptomatic_24_val == 0) { $("#reason_symptomatic_24").removeClass(["poschange", "negchange"])};
+        if (reason_travel_24_val == 0) { $("#reason_travel_24").removeClass(["poschange", "negchange"])};
+        if (reason_screening_24_val == 0) { $("#reason_screening_24").removeClass(["poschange", "negchange"])};
+    
 
         if (total_tested_7_val == 0) { $("#tested_7").removeClass(["poschange", "negchange"])};
         if (confirmed_7_val == 0) { $("#confirmed_7").removeClass(["poschange", "negchange"])};
@@ -248,7 +276,6 @@ $.ajax({
         if (active_7_val == 0) { $("#active_7").removeClass(["poschange", "negchange"])};
         if (recovered_7_val == 0) { $("#recovered_7").removeClass(["poschange", "negchange"])};
         if (deaths_7_val == 0) { $("#deaths_7").removeClass(["poschange", "negchange"])};
-        if (hospital_covid19_7_val == 0) { $("#hospital_covid19_7").removeClass(["poschange", "negchange"])};
         if (carehome_deaths_7_val == 0) { $("#hospital_deaths_7").removeClass(["poschange", "negchange"])};
         if (carehome_deaths_7_val == 0) { $("#carehome_deaths_7").removeClass(["poschange", "negchange"])};
         if (domestic_deaths_7_val == 0) { $("#domestic_deaths_7").removeClass(["poschange", "negchange"])};
@@ -258,6 +285,11 @@ $.ajax({
         if (cases_in_carehomes_7_val == 0) { $("#active_cases_carehomes_7").removeClass(["poschange", "negchange"])};
         if (cases_in_community_7_val == 0) { $("#active_cases_community_7").removeClass(["poschange", "negchange"])};
         if (cases_in_hospital_7_val == 0) { $("#active_cases_hospital_7").removeClass(["poschange", "negchange"])};
+        if (reason_symptomatic_7_val == 0) { $("#reason_symptomatic_7").removeClass(["poschange", "negchange"])};
+        if (reason_travel_7_val == 0) { $("#reason_travel_").removeClass(["poschange", "negchange"])};
+        if (reason_screening_7_val == 0) { $("#reason_screening_7").removeClass(["poschange", "negchange"])};
+     
+    
 
         $(".poschange").prepend("+");
 
@@ -266,7 +298,6 @@ $.ajax({
         document.getElementById('bar-right-positive').style.width = female_positive_val;
         document.getElementById('bar-left-recovered').style.width = male_recovered_val;
         document.getElementById('bar-right-recovered').style.width = female_recovered_val;
-        document.getElementById('bar-full-hospital').style.width = hospital_occupancy_percentage_val;
         document.getElementById('bar-left-deaths').style.width = male_deaths_val;
         document.getElementById('bar-right-deaths').style.width = female_deaths_val;
 

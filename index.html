@@ -72,17 +72,54 @@
         <div class="card">
 
           <div class="tested_people">
+
             <div class="six columns">    
-              <div class="data-label">Tests</div>
+              <div class="data-label">Total</div>
               <div id="total_tested" class="data"></div>
             </div>
+
             <div class="six columns">
               <div class="change">1 day change</div>
               <div id="tested_24" class="change-data"></div>
               <div class="change">1 week change</div>
               <div id="tested_7" class="change-data"></div>
             </div>
+
           </div>
+        </div>
+      </div>
+    </div>
+    <h2>Reason for Test</h2>
+    <div class="row">
+
+      <div class="four columns">
+        <div class="card">
+          <div class="data-label">Symptomatic</div>
+            <div id="reason_symptomatic" class="data"></div>
+            <div class="change">Day</div>
+            <div id="reason_symptomatic_24" class="change-data"></div>
+            <div class="change">Week</div>
+            <div id="reason_symptomatic_7" class="change-data"></div>
+        </div>
+      </div>
+       <div class="four columns">
+        <div class="card">
+         <div class="data-label">Inbound Travel</div>
+            <div id="reason_travel" class="data"></div>
+            <div class="change">Day</div>
+            <div id="reason_travel_24" class="change-data"></div>
+            <div class="change">Week</div>
+            <div id="reason_travel_7" class="change-data"></div>
+        </div>
+      </div>
+       <div class="four columns">
+        <div class="card">
+          <div class="data-label">Screening/Tracking</div>
+            <div id="reason_screening" class="data"></div>
+            <div class="change">Day</div>
+            <div id="reason_screening_24" class="change-data"></div>
+            <div class="change">Week</div>
+            <div id="reason_screening_7" class="change-data"></div>
         </div>
       </div>
     </div>
@@ -139,7 +176,7 @@
           </div>
 
           <div class="card recovered four columns">               
-            <div class="data-label">Recovered **</div>
+            <div class="data-label">Recovered *</div>
             <div id="recovered" class="data"></div>
             <div class="change">1 day change</div>
             <div id="recovered_24" class="change-data"></div>
@@ -288,6 +325,17 @@
 
           <div class="four columns">   
             <div class="card">             
+              <div class="data-label">Hospitals **</div>
+              <div id="active_cases_hospital" class="data"></div>
+              <div class="change">1 day change</div>
+              <div id="active_cases_hospital_24" class="change-data"></div>
+              <div class="change">1 week change</div>
+              <div id="active_cases_hospital_7" class="change-data"></div>
+            </div>
+          </div>
+
+          <div class="four columns">   
+            <div class="card">             
               <div class="data-label">Care Homes</div>
               <div id="active_cases_carehomes" class="data"></div>
               <div class="change">1 day change</div>
@@ -309,16 +357,7 @@
             </div>
           </div>
 
-          <div class="four columns">   
-            <div class="card">             
-              <div class="data-label">Hospital</div>
-              <div id="active_cases_hospital" class="data"></div>
-              <div class="change">1 day change</div>
-              <div id="active_cases_hospital_24" class="change-data"></div>
-              <div class="change">1 week change</div>
-              <div id="active_cases_hospital_7" class="change-data"></div>
-            </div>
-          </div>
+        
 
         </div>
       </div>
@@ -355,7 +394,7 @@
 
           <div class="four columns">   
             <div class="card">             
-              <div class="data-label">Hospitals ***</div>
+              <div class="data-label">Hospitals **</div>
               <div id="hospital_deaths" class="data"></div>
               <div class="change">1 day change</div>
               <div id="hospital_deaths_24" class="change-data"></div>
@@ -434,7 +473,7 @@
           <p>#StayHomeStaySafe</p>
           <div class="credit">
             
-            * based on population estimates from <a href="https://www.gov.je/SiteCollectionDocuments/Government%20and%20administration/R%20Population%20Estimate%202019%2020200615%20SU.pdf" target="_blank_"> Gov.je</a>. ** A person is reported as recovered once they are asymptomatic and do not show any COVID-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test. *** calculated from the General Hospital, Overdale Hospital and St Saviours.
+            * A person is reported as recovered once they are asymptomatic and do not show any COVID-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test. ** calculated from the General Hospital, Overdale Hospital and St Saviours.
           </div>
       </footer>
 
