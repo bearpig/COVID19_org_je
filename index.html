@@ -283,6 +283,85 @@
 
     <div class="row">
       <div class="twelve column">
+        <h2>Vaccinations</h2>
+        <div class="row">
+
+          <div class="six columns">   
+            <div class="pending card">             
+              <div class="data-label">Total number of first doses</div>
+              <div id="total_first_vaccinations" class="data"></div>
+           
+              <div id="total_first_vaccinations_perc" class="change-data"></div>
+            </div>
+          </div>
+          <div class="six columns">   
+            <div class="negative card">             
+              <div class="data-label">Total number of second doses</div>
+              <div id="total_second_vaccinations" class="data"></div>
+            
+              <div id="total_second_vaccinations_perc" class="change-data"></div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="row">
+
+          <div class="vaccination_progress twelve columns">
+          <h2>Vaccination Progress</h2>
+
+            <div class="card">                
+              <div class="bar-container twelve columns">
+                <div class="bar-text-right">
+                  Herd Immunity
+                </div>
+                <div class="bar-right">
+                  <div id="bar-right-herd-immunity"></div>
+                </div>
+                <div class="bar-text-right">
+                  <div id="herd_immunity_progress"></div>
+                </div>
+                <div class="twelve column">
+                  Herd Immunity based on 80% of the population<sup>***</sup> being fully vaccinated.
+                </div>
+              </div>
+            </div>
+
+            <div class="card">                
+              <div class="bar-container twelve columns">
+                <div class="bar-text-right">
+                  First Doses
+                </div>
+                <div class="bar-right">
+                  <div id="bar-right-vaccinated-first"></div>
+                </div>
+                <div class="bar-text-right">
+                  <div id="vaccination_first_progress"></div>
+                </div>
+  
+              </div>
+                 
+              <div class="bar-container twelve columns">
+                <div class="bar-text-right">
+                  Second Doses
+                </div>
+                <div class="bar-right">
+                  <div id="bar-right-vaccinated-second"></div>
+                </div>
+                <div class="bar-text-right">
+                  <div id="vaccination_second_progress"></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+<hr>
+
+    <div class="row">
+      <div class="twelve column">
         <h2>Active Cases</h2>
         <div class="row">
 
@@ -600,8 +679,7 @@
          
           <p>#StayHomeStaySafe</p>
           <div class="credit">
-            
-            * A person is reported as recovered once they are asymptomatic and do not show any COVID-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test. ** calculated from the General Hospital, Overdale Hospital and St Saviours.
+            * A person is reported as recovered once they are asymptomatic and do not show any COVID-19 symptoms anymore or they are asymptomatic and have been tested negative after a positive test. ** calculated from the General Hospital, Overdale Hospital and St Saviours. *** Population based on the latest available population estimate from Statistics Jersey
           </div>
       </footer>
 

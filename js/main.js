@@ -393,3 +393,41 @@ $.ajax({
 
     }
 });
+
+$.ajax({
+    type: "GET",
+    url: "https://data.openrock.xyz/feeds/covid19vaccinations",
+    success: function (raw_data) {
+
+        function formatNumber(num) {
+            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        }
+
+        raw_data = raw_data['data'][0]['data']
+        console.log(raw_data)
+        var total_first_vaccinations = formatNumber(Number(raw_data['first_doses']));
+        var total_second_vaccinations = formatNumber(Number(raw_data['second_doses']));
+        var total_first_vaccinations_perc = Number(raw_data['percentage_first']).toFixed(0)  + '%';
+        var total_second_vaccinations_perc = Number(raw_data['percentage_second']).toFixed(0)  + '%';
+        var herd_immunity_progress = Number(raw_data['herd_immunity_progress']).toFixed(0)  + '%';
+
+        $("#total_first_vaccinations").append(document.createTextNode(total_first_vaccinations));
+        $("#total_second_vaccinations").append(document.createTextNode(total_second_vaccinations));
+        $("#total_first_vaccinations_perc").append(document.createTextNode(total_first_vaccinations_perc));
+        $("#total_second_vaccinations_perc").append(document.createTextNode(total_second_vaccinations_perc));
+        
+
+
+        document.getElementById('bar-right-vaccinated-first').style.width = total_first_vaccinations_perc;
+        $("#vaccination_first_progress").append(document.createTextNode(total_first_vaccinations_perc));
+
+        document.getElementById('bar-right-vaccinated-second').style.width = total_second_vaccinations_perc;
+        $("#vaccination_second_progress").append(document.createTextNode(total_second_vaccinations_perc));
+
+
+        document.getElementById('bar-right-herd-immunity').style.width = herd_immunity_progress;
+        $("#herd_immunity_progress").append(document.createTextNode(herd_immunity_progress));
+
+
+    }
+});        

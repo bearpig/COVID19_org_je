@@ -216,7 +216,7 @@ header {
 	float:right;
 }
 
-#bar-right-positive, #bar-right-recovered, #bar-right-deaths {
+#bar-right-positive, #bar-right-recovered, #bar-right-deaths, #bar-right-vaccinated-first, #bar-right-vaccinated-second, #bar-right-herd-immunity {
 	background: #2f78d6;
 	height:10px;
 	float:left;
